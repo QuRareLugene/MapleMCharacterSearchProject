@@ -1,83 +1,166 @@
-:root {
-  --bg: #0b0f14;
-  --card: #10161d;
-  --muted: #aab3be;
-  --text: #e8edf2;
-  --accent: #4cc2ff;
-  --pill: #233242;
-  --grid-gap: 12px;
+:root{
+  --bg:#0b0f14; --card:#10161d; --muted:#aab3be; --text:#e8edf2; --accent:#4cc2ff; --pill:#233242; --grid-gap:12px;
+  --v-skill-bg:rgba(35,141,88,.16); --v-skill-bd:#2fd17a; --v-skill-tx:#c9f7df;
+  --v-enh-bg:rgba(41,101,255,.16); --v-enh-bd:#6aa2ff; --v-enh-tx:#d6e5ff;
+  --v-spc-bg:rgba(142,66,255,.16); --v-spc-bd:#b08cff; --v-spc-tx:#efe3ff;
+  --grade-normal:#6b7683; --grade-rare:#5aa9ff; --grade-epic:#b08cff; --grade-unique:#ffd34d; --grade-legendary:#2fd17a;
+  --chip-bg:#111a22; --chip-bd:#223244; --chip-tx:#cfe9ff;
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, Segoe UI, Roboto, Apple Color Emoji; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui, Segoe UI, Roboto, Apple Color Emoji}
 
-/* 상단바 / 검색 UI */
-.topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid #16202a; background: #0c131a; position: sticky; top: 0; }
-.topbar h1 { font-size: 18px; margin: 0; }
-.search { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.search select { padding: 10px 12px; border: 1px solid #233242; background: #0a1219; color: var(--text); border-radius: 8px; }
-.search input { width: 260px; max-width: 50vw; padding: 10px 12px; border: 1px solid #233242; background: #0a1219; color: var(--text); border-radius: 8px; }
-.search button { padding: 10px 14px; border: 0; background: var(--accent); color: #001b2b; border-radius: 8px; font-weight: 700; cursor: pointer; }
-.search button:disabled { opacity: 0.6; cursor: not-allowed; }
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #16202a;background:#0c131a;position:sticky;top:0}
+.topbar h1{font-size:18px;margin:0}
+.search{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.search select,.search input{padding:10px 12px;border:1px solid #233242;background:#0a1219;color:var(--text);border-radius:8px}
+.search input{width:260px;max-width:50vw}
+.search button{padding:10px 14px;border:0;background:var(--accent);color:#001b2b;border-radius:8px;font-weight:700;cursor:pointer}
+.search button:disabled{opacity:.6;cursor:not-allowed}
+.file-btn{padding:10px 12px;border:1px solid #233242;background:#0a1219;color:#bfe8ff;border-radius:8px;cursor:pointer}
+.file-btn:hover{border-color:#31506a}
+.pill{background:var(--pill);padding:2px 8px;border-radius:999px;color:#bfe8ff;font-size:12px;margin-left:6px}
+.pill .mini{margin-left:8px;font-size:12px;padding:2px 6px;border-radius:8px;border:1px solid #365061;background:#13202b;color:#bfe8ff;cursor:pointer}
 
-/* 파일 버튼 라벨 */
-.file-btn { padding: 10px 12px; border: 1px solid #233242; background: #0a1219; color: #bfe8ff; border-radius: 8px; cursor: pointer; }
-.file-btn:hover { border-color: #31506a; }
+main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
+.card{background:var(--card);border:1px solid #15212b;border-radius:12px;padding:14px 16px}
+.hidden{display:none}
+.row{display:flex;gap:16px;align-items:center}
+.avatar{width:120px;height:120px;object-fit:contain;background:#0b151d;border:1px solid #152735;border-radius:8px}
+.meta{color:var(--muted);margin-top:4px}
+.small{font-size:12px}
+.center{text-align:center}
 
-/* 오프라인 배지 */
-.pill { background: var(--pill); padding: 2px 8px; border-radius: 999px; color: #bfe8ff; font-size: 12px; margin-left: 6px; }
-.pill .mini { margin-left: 8px; font-size: 12px; padding: 2px 6px; border-radius: 8px; border: 1px solid #365061; background: #13202b; color: #bfe8ff; cursor: pointer; }
+/* 스탯 */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--grid-gap);margin-top:10px}
+.stat{background:#0b151d;border:1px solid #15212b;border-radius:8px;padding:8px}
+.stat .k{color:#90a4b4}
 
-/* 레이아웃/공통 */
-main { max-width: 1100px; margin: 22px auto; padding: 0 16px; display: grid; gap: 14px; }
-.card { background: var(--card); border: 1px solid #15212b; border-radius: 12px; padding: 14px 16px; }
-.hidden { display: none; }
-.row { display: flex; gap: 16px; align-items: center; }
-.avatar { width: 120px; height: 120px; object-fit: contain; background: #0b151d; border: 1px solid #152735; border-radius: 8px; }
-.meta { color: var(--muted); margin-top: 4px; }
-.small { font-size: 12px; }
-.center { text-align: center; }
+/* 칩 */
+.chip{display:inline-block;padding:4px 8px;border:1px solid var(--chip-bd);background:var(--chip-bg);color:var(--chip-tx);border-radius:6px;font-size:12px;vertical-align:top}
+.chip-row{display:block;margin-top:4px}
+.chip-stack.stacked{margin-top:6px}
+.chip.mini{font-size:11px;padding:2px 6px}
+.chip.top-right,.chip.top-left{position:absolute;top:6px;z-index:1;pointer-events:none}
+.chip.top-left{left:6px}
+.chip.top-right{right:6px}
+.chip.lbl{opacity:.85}
 
-/* 스탯 그리드 */
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--grid-gap); margin-top: 10px; }
-.stat { background: #0b151d; border: 1px solid #15212b; border-radius: 8px; padding: 8px; }
-.stat .k { color: #90a4b4; }
+/* 등급 색 */
+.chip.grade-normal{border-color:var(--grade-normal);color:#dde3ea;background:rgba(107,118,131,.14)}
+.chip.grade-rare{border-color:var(--grade-rare);color:#d9ecff;background:rgba(90,169,255,.12)}
+.chip.grade-epic{border-color:var(--grade-epic);color:#efe3ff;background:rgba(176,140,255,.12)}
+.chip.grade-unique{border-color:var(--grade-unique);color:#fff3c2;background:rgba(255,211,77,.14)}
+.chip.grade-legendary{border-color:var(--grade-legendary);color:#c9f7df;background:rgba(47,209,122,.14)}
 
-/* 장비 그룹 컨테이너 */
-.equip-wrap { display: grid; gap: 18px; }
-.equip-group h4 { margin: 0 0 8px 2px; color: #cfe9ff; font-size: 14px; }
-.equip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--grid-gap); }
+.equip.grade-border-normal{border-color:var(--grade-normal)}
+.equip.grade-border-rare{border-color:var(--grade-rare)}
+.equip.grade-border-epic{border-color:var(--grade-epic)}
+.equip.grade-border-unique{border-color:var(--grade-unique)}
+.equip.grade-border-legendary{border-color:var(--grade-legendary)}
 
-/* 장비 카드: 채움/빈칸 공용 */
-.equip { display: grid; grid-template-columns: 56px 1fr; gap: 8px; align-items: center; padding: 8px; border: 1px solid #1a2631; border-radius: 10px; background: #0b141c; }
-.equip img { width: 56px; height: 56px; object-fit: contain; border-radius: 8px; background: #0b151d; border: 1px solid #1c2a35; }
-.equip .name { font-weight: 700; }
-.equip .meta { color: var(--muted); font-size: 12px; }
+/* 장비 그룹 & 동일폭 */
+.equip-wrap{display:grid;gap:18px}
+.equip-group h4{margin:0 0 8px 2px;color:#cfe9ff;font-size:14px}
+.equip-grid{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:var(--grid-gap)}
+.row-grid-2.equal{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:var(--grid-gap)}
+.row-grid-3.equal{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:var(--grid-gap)}
+.block-gap{height:6px}
 
-/* 빈칸 카드(슬롯만 표시) */
-.equip.empty { opacity: 0.7; background: #091017; border-style: dashed; }
-.equip.empty .slot-label { font-weight: 600; color: #9db3c6; }
-.equip.empty .note { color: #5f7385; font-size: 12px; margin-top: 6px; }
+/* 장비 카드 (상단정렬/칩 여백) */
+.equip{position:relative;display:grid;grid-template-columns:56px 1fr;gap:8px;align-items:flex-start;padding:10px;border:1px solid #1a2631;border-radius:10px;background:#0b141c}
+.equip.has-topchip{padding-top:32px}
+.equip img{width:56px;height:56px;object-fit:contain;border-radius:8px;background:#0b151d;border:1px solid #1c2a35}
+.equip .name{font-weight:800;font-size:14px}
+.equip .slot-label{font-weight:600;color:#9db3c6}
+.equip .note{color:#5f7385;font-size:12px;margin-top:6px}
+.equip.empty{opacity:.7;background:#091017;border-style:dashed}
 
-/* 태그 */
-.tag { display: inline-block; background: #13202b; border: 1px solid #1f2f3f; border-radius: 999px; padding: 2px 8px; margin: 2px 4px 0 0; color: #a7d8ff; font-size: 12px; }
-.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.taggy .list-item { display: flex; flex-wrap: wrap; gap: 6px; }
+/* 심볼 */
+.symbol-groups{display:grid;gap:12px}
+.symbol-group-title{margin:0 0 6px;color:#cfe9ff;font-size:14px}
+.symbol-grid{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:12px}
+.symbol-card{position:relative;display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:flex-start;padding:10px;border:1px solid #1c2733;border-radius:10px;background:#0a1219}
+.symbol-card.has-topchip{padding-top:32px}
+.symbol-card img{width:56px;height:56px;object-fit:contain;border:1px solid #1c2a35;background:#0b151d;border-radius:8px}
 
-/* 상태 메시지 */
-.status { padding: 12px; border: 1px dashed #223244; border-radius: 10px; }
-.muted { color: var(--muted); }
+/* 세트 효과 2단 */
+.set-grid{display:grid;grid-template-columns:repeat(2,minmax(300px,1fr));gap:12px}
+.set-grid>li{list-style:none;margin:0;padding:0}
+.set-card{border:1px solid #1c2733;border-radius:12px;background:#0a1219;padding:10px;display:grid;gap:6px;align-items:flex-start}
+.set-title{font-weight:700;margin-bottom:4px;color:#e8edf2}
 
-/* 쥬얼 카드 그리드 */
-.jewel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-.jewel-card { display: flex; gap: 10px; align-items: center; padding: 10px; border: 1px solid #1c2733; border-radius: 10px; background: #0a1219; }
-.jewel-card .jewel-icon { width: 48px; height: 48px; object-fit: contain; flex: 0 0 auto; }
-.jewel-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.jewel-meta .slot { font-size: 12px; color: #8aa0b4; }
-.jewel-meta .name { font-weight: 600; color: #e8edf2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.jewel-meta .opt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* 쥬얼 */
+.jewel-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.jewel-page{position:relative;border:1px solid #2a3542;border-radius:12px;padding:10px;background:#0b141c}
+.jewel-page.has-topchip{padding-top:32px}
+.jewel-page.active{border-color:#ffd34d;box-shadow:0 0 0 1px rgba(255,211,77,.25) inset}
+.jewel-page.inactive{border-color:#2a3542}
+.jewel-page .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;color:#e8edf2}
+.jewel-five{display:grid;grid-template-columns:repeat(5,minmax(140px,1fr));gap:10px}
+.jewel-card{position:relative;display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:flex-start;padding:10px;border:1px solid #1c2733;border-radius:10px;background:#0a1219}
+.jewel-card.has-topchip{padding-top:32px}
+.jewel-card .jewel-icon{width:48px;height:48px;object-fit:contain;border-radius:8px;border:1px solid #1c2a35;background:#0b151d}
+.jewel-meta{display:grid;gap:4px;min-width:0}
+.jewel-meta .name{font-weight:700;color:#e8edf2;white-space:normal;overflow:visible;text-overflow:clip;word-break:keep-all}
+.jewel-card.grade-SSS{border-color:#ffb400;box-shadow:0 0 0 1px rgba(255,180,0,.2) inset}
+.jewel-card.grade-SS{border-color:#7fdcfe;box-shadow:0 0 0 1px rgba(127,220,254,.2) inset}
+.jewel-card.grade-S{border-color:#7aff9a;box-shadow:0 0 0 1px rgba(122,255,154,.15) inset}
 
-/* 쥬얼 등급 강조 */
-.jewel-card.grade-SSS { border-color: #ffb400; box-shadow: 0 0 0 1px rgba(255,180,0,0.2) inset; }
-.jewel-card.grade-SS  { border-color: #7fdcfe;  box-shadow: 0 0 0 1px rgba(127,220,254,0.2) inset; }
-.jewel-card.grade-S   { border-color: #7aff9a;  box-shadow: 0 0 0 1px rgba(122,255,154,0.15) inset; }
+/* 서브카드/안드로이드 */
+.subcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.subcard{border:1px solid #1c2733;border-radius:10px;background:#0a1219;padding:10px}
+.subcard h4{margin:0 0 8px;font-size:13px;color:#cfe9ff}
+.kvline{color:var(--muted);font-size:12px}
+
+/* 안드로이드 헤드 폭 찌부 방지 */
+.android-card{position:relative;display:grid;gap:10px;align-items:flex-start}
+.android-card.has-topchip{padding-top:32px}
+.android-head{display:grid;grid-template-columns:56px minmax(0,1fr);gap:10px;align-items:flex-start}
+.android-meta{min-width:0}
+.android-meta .title-lg{font-weight:800;overflow-wrap:anywhere;word-break:keep-all;line-height:1.2}
+.android-section{margin-top:2px}
+
+/* 미니 그리드/카드 */
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.mini-card{position:relative;border:1px solid #1a2631;border-radius:10px;background:#0b141c;padding:8px;display:grid;gap:6px;align-items:flex-start;min-height:56px}
+.mini-card.has-topchip{padding-top:30px}
+.mini-card.with-icon{grid-template-columns:28px 1fr}
+.mini-card img{width:28px;height:28px;object-fit:contain}
+.mini-meta,.link-meta{min-width:0}
+.skill-name,.pet-name{font-weight:800;font-size:14px}
+.mini-sub{color:var(--muted);font-size:12px;white-space:normal}
+
+/* 펫 칩 */
+.pet-card .pet-name{font-weight:800;font-size:14px}
+.pet-type{margin-top:4px}
+.chip.pet-type.pet-luna{border-color:#8ad1ff;background:rgba(138,209,255,.12);color:#dff3ff}
+.chip.pet-type.pet-petite{border-color:#ff8ad6;background:rgba(255,138,214,.12);color:#ffe3f7}
+.chip.pet-type.pet-luna-petite{border-color:#c28dff;background:rgba(194,141,255,.14);color:#f2e8ff}
+.chip.pet-type.pet-pinkbean{border-color:#ff9ac4;background:rgba(255,154,196,.14);color:#fff0f6}
+.chip.pet-type.pet-yeti{border-color:#b3e5ff;background:rgba(179,229,255,.12);color:#e9f7ff}
+.chip.pet-type.pet-ririn{border-color:#ffd27f;background:rgba(255,210,127,.14);color:#fff7e6}
+.chip.pet-type.pet-dragon{border-color:#7aff9a;background:rgba(122,255,154,.12);color:#e8ffef}
+.chip.pet-type.pet-kitty{border-color:#ffcfdf;background:rgba(255,207,223,.12);color:#fff2f6}
+.chip.pet-type.pet-etc{border-color:#4cc2ff;background:rgba(76,194,255,.12);color:#def2ff}
+
+/* 스킬/링크 */
+.skill-set{border:1px solid #1c2733;border-radius:12px;background:#0a1219;padding:10px}
+.skill-set h4{margin:0 0 8px;color:#cfe9ff;font-size:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(200px,1fr));gap:8px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:8px}
+
+/* V 매트릭스 2×15 — 상단정렬 보장 */
+.v-grid{display:grid;gap:10px;align-items:start}
+.v-grid.v-grid-2x15{grid-template-columns:repeat(2,minmax(320px,1fr));grid-auto-rows:minmax(0,auto);align-items:start}
+.v-card{position:relative;border:1px solid #1a2631;border-radius:10px;background:#0b141c;padding:10px;display:grid;gap:6px;align-items:flex-start;min-height:72px;align-self:start}
+.v-card.has-topchip{padding-top:32px}
+.v-name{font-weight:800;font-size:14px}
+.chip.vtype-skill{background:var(--v-skill-bg);border-color:var(--v-skill-bd);color:var(--v-skill-tx)}
+.chip.vtype-enhancement{background:var(--v-enh-bg);border-color:var(--v-enh-bd);color:var(--v-enh-tx)}
+.chip.vtype-special{background:var(--v-spc-bg);border-color:var(--v-spc-bd);color:var(--v-spc-tx)}
+
+/* 상태/없음 */
+.status{padding:12px;border:1px dashed #223244;border-radius:10px}
+.muted{color:var(--muted)}
+.empty-card{border:1px dashed #33485c;background:#0a1219;border-radius:10px;padding:16px;color:#9db3c6;text-align:center}

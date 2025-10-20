@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import os, re, asyncio
-from typing import Optional, Literal, Dict
+import os, re, asyncio, json
+from typing import Optional, Literal, Dict, Any
 
 import httpx
 from cachetools import TTLCache
@@ -18,6 +18,9 @@ if not API_KEY:
 
 API_BASE = "https://open.api.nexon.com"
 HEADERS = {"x-nxopen-api-key": API_KEY}
+
+ICON_PREFIX = "https://open.api.nexon.com/static/maplestorym/asset/icon/"
+HEX64 = re.compile(r"^[0-9a-f]{64}$", re.I)
 
 # ─────────────────────────────────────────────────────────────
 # 전역 HTTP 클라이언트/제한/캐시
@@ -45,8 +48,31 @@ M_PATHS = {
     "symbol": "/maplestorym/v1/character/symbol",
 }
 
-HEX64 = re.compile(r"^[0-9a-f]{64}$", re.I)
 WorldName = Literal["아케인", "크로아", "엘리시움", "루나", "스카니아", "유니온", "제니스"]
+
+def normalize_icon_url(v: Any) -> Any:
+    """아이콘 필드가 해시만 오면 공식 아이콘 URL로 승격."""
+    if isinstance(v, str):
+        if v.startswith("http://") or v.startswith("https://"):
+            return v
+        if HEX64.match(v):  # 해시만 온 케이스
+            return ICON_PREFIX + v
+    return v
+
+def normalize_and_collect_icons(obj: Any, acc: set[str]) -> None:
+    """payload 전체를 순회하며 *_icon / character_image 값을 URL로 보정 + 수집."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            is_icon_key = k.endswith("_icon") or k == "character_image"
+            if is_icon_key:
+                fixed = normalize_icon_url(v)
+                obj[k] = fixed
+                if isinstance(fixed, str) and fixed:
+                    acc.add(fixed)
+            normalize_and_collect_icons(v, acc)
+    elif isinstance(obj, list):
+        for it in obj:
+            normalize_and_collect_icons(it, acc)
 
 async def nx_get(path: str, params: dict, max_retries: int = 4):
     """
@@ -101,7 +127,7 @@ async def fetch_all_sections(ocid: str) -> dict:
     하나의 ocid에 대해 필요한 모든 섹션을 순차 수집(0.1s 페이싱).
     - 캐시 우선 사용
     - 동시 중복요청 디듀프
-    - 리턴: { key: 섹션원본JSON, ... }
+    - 리턴: { key: 섹션원본JSON, ... } + _assets.icon_urls
     """
     if ocid in cache:
         return cache[ocid]
@@ -116,11 +142,16 @@ async def fetch_all_sections(ocid: str) -> dict:
             "jewel", "android_equipment", "pet_equipment", "skill_equipment",
             "link_skill", "vmatrix"
         ]
-        out = {}
+        out: dict[str, Any] = {}
         for key in order:
             out[key] = await nx_get(M_PATHS[key], params)
-            # 페이싱으로 429 빈도 낮춤
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(0.1)  # 페이싱으로 429 빈도 낮춤
+
+        # 아이콘 URL 보정 + 수집
+        icon_set: set[str] = set()
+        normalize_and_collect_icons(out, icon_set)
+        out["_assets"] = {"icon_urls": sorted(icon_set)}
+
         cache[ocid] = out
         return out
 
@@ -134,7 +165,9 @@ async def fetch_all_sections(ocid: str) -> dict:
 # ─────────────────────────────────────────────────────────────
 # FastAPI 앱
 # ─────────────────────────────────────────────────────────────
-app = FastAPI(title="MapleM Viewer", version="1.3")
+from fastapi import Request
+
+app = FastAPI(title="MapleM Viewer", version="1.4")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.on_event("startup")
