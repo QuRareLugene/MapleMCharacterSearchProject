@@ -194,22 +194,21 @@ const EQUIP_GROUPS = [
 ];
 
 /* ---------- 펫 타입 칩 ---------- */
-const PET_TYPE_CLASS = {
-  "루나 쁘띠":"pet-luna-petite",
-  "루나":"pet-luna",
-  "쁘띠":"pet-petite",
-  "핑크빈":"pet-pinkbean",
-  "예티":"pet-yeti",
-  "리린":"pet-ririn",
-  "드래곤":"pet-dragon",
-  "키티":"pet-kitty",
-};
-function inferPetType(name = "") {
-  for (const k of Object.keys(PET_TYPE_CLASS)) if (String(name).includes(k)) return k;
+function inferPetType(type = "") {
+  const s = String(type);
+  if (s === "LunaPetit") return "Luna Petite";
+  if (s.startsWith("Luna")) return "Luna";
+  if (s.startsWith("Wonder")) return "Wonder";
   return "기타";
 }
-function petTypeChip(name = "") {
-  const t = inferPetType(name);
-  const cls = PET_TYPE_CLASS[t] || "pet-etc";
-  return chip(t, `pet-type ${cls}`);
+function petTypeChip(type = "") {
+  const category = inferPetType(type);
+  const typeToClass = {
+    "Luna Petite": "grade-unique",
+    "Luna": "grade-epic",
+    "Wonder": "grade-rare",
+    "기타": "grade-rare",
+  };
+  const cls = typeToClass[category] || "grade-rare";
+  return chip(category, cls);
 }

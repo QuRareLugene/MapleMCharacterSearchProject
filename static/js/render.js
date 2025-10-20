@@ -56,10 +56,11 @@ function renderAll(data, worldLabel) {
   const statArr = S.stat?.data?.stat || S.stat?.data?.final_stat || [];
   const smap = new Map(statArr.map(s => [s.stat_name, s.stat_value]));
   const sg = $("#stats-grid"); sg.innerHTML = ""; sg.className = "stats-grid profile";
+  const statsToFormat = new Set(["전투력", "HP", "MP", "물리 공격력", "마법 공격력", "물리 방어력", "마법 방어력"]);
   const mk = (name, val, cls="") => {
     const box = elt("div", `stat ${cls}`);
     box.append(elt("div", "k", name));
-    const vtxt = name === "전투력" ? toManNotation(val) : val ?? "-";
+    const vtxt = statsToFormat.has(name) ? toManNotation(val) : val ?? "-";
     box.append(elt("div", "v", vtxt));
     return box;
   };
@@ -352,14 +353,23 @@ function renderAll(data, worldLabel) {
   const petCard = elt("div","subcard");
   petCard.append(h4("펫"));
   const pRows = elt("div","row-grid-3 equal");
-  const p1 = pet.pet_1_name ? `${pet.pet_1_name}` : "";
-  const p2 = pet.pet_2_name ? `${pet.pet_2_name}` : "";
-  const p3 = pet.pet_3_name ? `${pet.pet_3_name}` : "";
-  [p1,p2,p3].forEach((nm,i)=>{
+  const pets = [
+    { name: pet.pet_1_name, type: pet.pet_1_pet_type, expire: pet.pet_1_date_expire },
+    { name: pet.pet_2_name, type: pet.pet_2_pet_type, expire: pet.pet_2_date_expire },
+    { name: pet.pet_3_name, type: pet.pet_3_pet_type, expire: pet.pet_3_date_expire }
+  ];
+
+  pets.forEach((p, i) => {
     const c = elt("div","mini-card has-topchip pet-card");
     c.append(chip(`펫 ${i+1}`, "mini top-left"));
-    c.append(elt("div","pet-name", nm || "없음"));
-    if (nm) c.append(petTypeChip(nm));
+    c.append(elt("div", "pet-name", p.name || "없음"));
+    if (p.name) {
+      c.append(petTypeChip(p.type));
+      if (p.expire) {
+        const date = new Date(p.expire).toLocaleDateString();
+        c.append(elt("div", "pet-expire", `만료: ${date}`));
+      }
+    }
     pRows.append(c);
   });
   petCard.append(pRows);
