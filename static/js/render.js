@@ -1,360 +1,28 @@
 /* =========================================================================
- * Maple M Viewer — 칩/카드 정렬/폭 수정 + 하트 확장 + V매트릭스 상단정렬
+ * Maple M Viewer — Rendering Logic
  * ========================================================================= */
 
-const $ = (sel) => document.querySelector(sel);
-const ICON_PREFIX = "https://open.api.nexon.com/static/maplestorym/asset/icon/";
-
-/* ---------- 칩 유틸 ---------- */
-function chip(text, cls = "") {
-  const s = document.createElement("span");
-  s.className = `chip ${cls}`.trim();
-  s.textContent = text;
-  return s;
-}
-function chipRow(...chips) {
-  const r = document.createElement("div");
-  r.className = "chip-row";
-  chips.filter(Boolean).forEach((c) => r.append(c));
-  return r;
-}
-function chipStack(parent, labels = [], cls = "") {
-  const wrap = document.createElement("div");
-  wrap.className = `chip-stack ${cls}`.trim();
-  labels.forEach((l) => wrap.append(chipRow(chip(l))));
-  parent.append(wrap);
-  return wrap;
-}
-function chipSection(title, rowsBuilder) {
-  const wrap = document.createElement("div");
-  wrap.className = "chip-section";
-  const tt = document.createElement("div");
-  tt.className = "chip-title";
-  tt.textContent = title;
-  wrap.append(tt);
-  const body = document.createElement("div");
-  body.className = "chip-stack stacked";
-  if (typeof rowsBuilder === "function") rowsBuilder(body);
-  wrap.append(body);
-  return wrap;
+function parseEffectValue(value) {
+  const num = parseFloat(String(value).replace(/,/g, ''));
+  const unit = String(value).replace(/[\d.,\s]/g, '');
+  return { num: isNaN(num) ? 0 : num, unit };
 }
 
-/* ---------- 숫자 포맷 ---------- */
-function toManNotation(n) {
-  if (n == null) return "-";
-  const num = Number(String(n).replace(/[^\d]/g, ""));
-  if (!Number.isFinite(num)) return String(n);
-  const man = Math.floor(num / 10000);
-  const rest = num % 10000;
-  if (man <= 0) return num.toLocaleString();
-  return `${man} 만 ${String(rest).padStart(4, "0")}`;
-}
-
-/* ---------- 효과 텍스트 → 칩 ---------- */
-function effectTextToChips(text) {
-  if (!text) return [];
-  let t = String(text).replace(/\s+/g, " ").trim();
-  t = t.replace(/[\[\]]/g, ""); // 표시용 대괄호 제거
-  const lv = t.match(/Lv\.?\s*([0-9]+)/i);
-  const chips = [];
-  if (lv) {
-    chips.push(`Lv. ${lv[1]}`);
-    t = (t.slice(0, lv.index) + t.slice(lv.index + lv[0].length)).trim();
-    t = t.replace(/^[·•\/\|\;\s]+/, "");
+function parseSkillNameAndLevel(name) {
+  if (!name) return { name: '-', level: null };
+  const match = name.match(/Lv\.(\d+)\s+(.+)/);
+  if (match) {
+    return { name: match[2], level: parseInt(match[1], 10) };
   }
-  const parts = t
-    .split(/\n|<br\s*\/?>|[·•\/\|\;]|,\s+(?!\d)/i) // 천단위 콤마는 유지
-    .map((s) => s.trim())
-    .filter(Boolean);
-  parts.forEach((p) => chips.push(p));
-  return chips;
-}
-function setEffectToChips(text) {
-  if (!text) return [];
-  const t = String(text).trim().replace(/^\[|\]$/g, "").replace(/[\r\n]+/g, " ");
-  return t.split(/,\s+(?!\d)/).map((s) => s.trim()).filter(Boolean);
+  return { name: name, level: null };
 }
 
-/* ---------- 아이콘 URL 보정 ---------- */
-function looksLikeHash(s) {
-  return typeof s === "string" && /^[0-9a-f]{64}$/i.test(s);
-}
-function normalizeIconUrl(u) {
-  if (!u) return u;
-  if (typeof u !== "string") return u;
-  if (/^https?:\/\//i.test(u)) return u;
-  if (looksLikeHash(u)) return ICON_PREFIX + u;
-  return u;
-}
-function normalizeAllIconsInPlace(obj, set = new Set()) {
-  if (Array.isArray(obj)) {
-    obj.forEach((v) => normalizeAllIconsInPlace(v, set));
-    return set;
-  }
-  if (obj && typeof obj === "object") {
-    for (const [k, v] of Object.entries(obj)) {
-      const isIconKey = k.endsWith("_icon") || k === "character_image";
-      if (isIconKey && typeof v === "string") {
-        const fixed = normalizeIconUrl(v);
-        obj[k] = fixed;
-        if (fixed) set.add(fixed);
-      }
-      normalizeAllIconsInPlace(v, set);
-    }
-  }
-  return set;
-}
-
-/* ---------- 등급 칩/테두리 ---------- */
-const GRADE_CHIP_CLASS = {
-  일반: "grade-normal",
-  노말: "grade-normal",
-  레어: "grade-rare",
-  에픽: "grade-epic",
-  유니크: "grade-unique",
-  레전더리: "grade-legendary",
-};
-const GRADE_BORDER_CLASS = {
-  일반: "grade-border-normal",
-  노말: "grade-border-normal",
-  레어: "grade-border-rare",
-  에픽: "grade-border-epic",
-  유니크: "grade-border-unique",
-  레전더리: "grade-border-legendary",
-};
-
-/* ---------- 장신구 판단 ---------- */
-const ACCESSORY_SLOTS = new Set([
-  "반지 1","반지 2","반지 3","반지 4",
-  "목걸이 1","목걸이 2","귀걸이 1",
-  "얼굴장식","눈장식","훈장","칭호","뱃지","포켓",
-]);
-function isAccessorySlot(slotLabel = "") { return ACCESSORY_SLOTS.has(slotLabel); }
-
-/* ---------- 전승/전수 라벨 ---------- */
-function normalizeAbilityFlag(s, okLabel, badLabel) {
-  if (!s) return null;
-  const str = String(s);
-  const ok = /가능|able|true|1/i.test(str);
-  const no = /불가|not|false|0/i.test(str);
-  if (ok && !no) return okLabel;
-  if (no && !ok) return badLabel;
-  return str;
-}
-
-/* ---------- DOM 유틸 ---------- */
-function elt(tag, cls, text) {
-  const n = document.createElement(tag);
-  if (cls) n.className = cls;
-  if (text != null) n.textContent = text;
-  return n;
-}
-function safeImg(url, alt = "", size = 56, cls = "") {
-  if (!url) return null;
-  const img = document.createElement("img");
-  img.alt = alt;
-  img.width = size;
-  img.height = size;
-  img.src = normalizeIconUrl(url);
-  if (cls) img.className = cls;
-  img.onerror = () => img.remove();
-  return img;
-}
-function emptyCard(msg = "없음") {
-  const d = document.createElement("div");
-  d.className = "empty-card";
-  d.textContent = msg;
-  return d;
-}
-function h4(text){ const h=document.createElement("h4"); h.textContent=text; return h; }
-
-/* ---------- 슬롯명 정규화 ---------- */
-function normalizeSlot(apiSlotName) {
-  if (!apiSlotName) return "";
-  const s = String(apiSlotName);
-  if (s.startsWith("반지")) {
-    if (s.includes("2번째")) return "반지 2";
-    if (s.includes("3번째")) return "반지 3";
-    if (s.includes("4번째")) return "반지 4";
-    return "반지 1";
-  }
-  if (s.startsWith("목걸이")) return s.includes("2번째") ? "목걸이 2" : "목걸이 1";
-  if (s.includes("귀고리")) return "귀걸이 1";
-  if (s.includes("석궁")) return "무기";
-  return s;
-}
-
-/* ---------- 전역 상태/핸들 ---------- */
-let inFlight = null;
-let currentPayload = null;
-let currentWorldLabel = null;
-let offlineSnapshot = null;
-let offlineMode = false;
-
-const statusEl = $("#status");
-const btnSearch = $("#btn");
-const btnExport = $("#export-json");
-const inputWorld = $("#world");
-const inputName = $("#q");
-const inputImport = $("#import-json");
-const offlineBadge = $("#offline-badge");
-const offlineClear = $("#offline-clear");
-
-document.addEventListener("DOMContentLoaded", () => {
-  btnSearch.addEventListener("click", onSearch);
-  inputName.addEventListener("keydown", (e) => { if (e.key === "Enter") onSearch(); });
-  inputWorld.addEventListener("keydown", (e) => { if (e.key === "Enter") onSearch(); });
-  inputImport.addEventListener("change", onImportFromFile);
-  offlineClear.addEventListener("click", clearOfflineMode);
-  btnExport.addEventListener("click", onExportSnapshot);
-});
-
-function setStatus(msg){ statusEl.classList.remove("hidden"); statusEl.textContent = msg; }
-function setOfflineBadge(show){ offlineBadge.classList.toggle("hidden", !show); }
-
-/* ---------- 검색/Import/Export ---------- */
-async function onSearch() {
-  const world = inputWorld.value;
-  const name = inputName.value.trim();
-  if (!world) { setStatus("월드를 선택하세요."); return; }
-  if (!name) { setStatus("캐릭터명을 입력하세요."); return; }
-
-  if (offlineMode && offlineSnapshot?.payload) {
-    const payload = offlineSnapshot.payload;
-    normalizeAllIconsInPlace(payload);
-    currentPayload = payload;
-    currentWorldLabel = snapshotWorldLabel(offlineSnapshot) || world;
-    renderAll(payload, currentWorldLabel);
-    statusEl.classList.add("hidden");
-    return;
-  }
-
-  if (inFlight) inFlight.abort();
-  inFlight = new AbortController();
-  btnSearch.disabled = true;
-  btnSearch.textContent = "조회 중…";
-  setStatus("조회 중…");
-
-  const url = new URL("/api/character", location.origin);
-  url.searchParams.set("q", name);
-  url.searchParams.set("world_name", world);
-
-  try {
-    const res = await fetch(url.toString(), { signal: inFlight.signal });
-    if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
-    const payload = await res.json();
-    normalizeAllIconsInPlace(payload);
-    currentPayload = payload;
-    currentWorldLabel = world;
-    renderAll(payload, world);
-    statusEl.classList.add("hidden");
-  } catch (err) {
-    if (err.name !== "AbortError") {
-      console.error(err);
-      setStatus("조회 실패: " + err.message);
-    }
-  } finally {
-    btnSearch.disabled = false;
-    btnSearch.textContent = "검색";
-    inFlight = null;
-  }
-}
-async function onImportFromFile(e) {
-  const file = e.target.files?.[0];
-  if (!file) return;
-  try {
-    const text = await file.text();
-    const json = JSON.parse(text);
-    let snapshot;
-    if (isSnapshotFormat(json)) snapshot = json;
-    else if (looksLikePayload(json)) {
-      snapshot = {
-        _type: "maplem.viewer.snapshot",
-        version: 2,
-        saved_at: new Date().toISOString(),
-        meta: inferMetaFromPayload(json),
-        assets: { icon_urls: Array.from(normalizeAllIconsInPlace(json)) },
-        payload: json
-      };
-    } else throw new Error("알 수 없는 JSON 형식입니다.");
-
-    validatePayload(snapshot.payload);
-    normalizeAllIconsInPlace(snapshot.payload);
-    offlineSnapshot = snapshot;
-    offlineMode = true;
-    setOfflineBadge(true);
-
-    currentPayload = snapshot.payload;
-    currentWorldLabel = snapshotWorldLabel(snapshot) || snapshot?.payload?.basic?.world_name || "(unknown)";
-    renderAll(currentPayload, currentWorldLabel);
-    statusEl.classList.add("hidden");
-    setStatus("JSON 스냅샷이 로드되었습니다.");
-  } catch (err) {
-    console.error(err);
-    setStatus("Import 실패: " + err.message);
-  } finally { e.target.value = ""; }
-}
-function isSnapshotFormat(obj){ return obj && obj._type==="maplem.viewer.snapshot" && obj.payload && typeof obj.payload==="object"; }
-function looksLikePayload(obj){
-  if (!obj || typeof obj!=="object") return false;
-  const needed = ["basic","stat","item_equipment","set_effect","symbol","jewel","android_equipment","pet_equipment","skill_equipment","link_skill","vmatrix"];
-  return needed.some((k)=>k in obj);
-}
-function inferMetaFromPayload(payload){ return { character_name: payload?.basic?.character_name || null, world_name: payload?.basic?.world_name || null }; }
-function snapshotWorldLabel(snap){ return snap?.meta?.world_name || snap?.payload?.basic?.world_name || null; }
-function validatePayload(p){ if (!p || typeof p!=="object") throw new Error("payload가 비어있습니다."); if (!p.basic) throw new Error("payload.basic 누락"); }
-function clearOfflineMode(){ offlineMode=false; offlineSnapshot=null; setOfflineBadge(false); setStatus("오프라인 모드가 해제되었습니다."); }
-function onExportSnapshot(){
-  if (!currentPayload){ setStatus("내보낼 데이터가 없습니다. 먼저 검색하거나 스냅샷을 불러오세요."); return; }
-  const iconSet = normalizeAllIconsInPlace(currentPayload, new Set());
-  const icon_urls = Array.from(iconSet);
-  currentPayload._assets = Object.assign({}, currentPayload._assets || {}, { icon_urls });
-  const meta = {
-    character_name: currentPayload?.basic?.character_name || null,
-    world_name: currentWorldLabel || currentPayload?.basic?.world_name || null
-  };
-  const snapshot = {
-    _type:"maplem.viewer.snapshot", version:2, saved_at:new Date().toISOString(),
-    meta, assets:{ icon_urls }, payload: currentPayload
-  };
-  const char = meta.character_name || "character";
-  const world = meta.world_name || "world";
-  const stamp = new Date().toISOString().replace(/[:.]/g,"-");
-  const filename = `maplem_${world}_${char}_${stamp}.json`;
-  const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type:"application/json;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a"); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-  setStatus("JSON으로 내보냈습니다. (아이콘 링크 포함)");
-}
-
-/* ---------- 그룹/슬롯 ---------- */
-const EQUIP_GROUPS = [
-  { title:"무기", slots:["무기","보조무기","엠블렘"] },
-  { title:"주 방어구", slots:["모자","상의","하의","한벌옷"] },
-  { title:"보조 방어구", slots:["장갑","신발","어깨","벨트","망토"] },
-  { title:"주 장신구", slots:["반지 1","반지 2","반지 3","반지 4","귀걸이 1","목걸이 1","목걸이 2","얼굴장식","눈장식"] },
-  { title:"보조 장신구", slots:["훈장","칭호","뱃지","포켓"] },
-];
-
-/* ---------- 펫 타입 칩 ---------- */
-const PET_TYPE_CLASS = {
-  "루나 쁘띠":"pet-luna-petite",
-  "루나":"pet-luna",
-  "쁘띠":"pet-petite",
-  "핑크빈":"pet-pinkbean",
-  "예티":"pet-yeti",
-  "리린":"pet-ririn",
-  "드래곤":"pet-dragon",
-  "키티":"pet-kitty",
-};
-function inferPetType(name = "") {
-  for (const k of Object.keys(PET_TYPE_CLASS)) if (String(name).includes(k)) return k;
-  return "기타";
-}
-function petTypeChip(name = "") {
-  const t = inferPetType(name);
-  const cls = PET_TYPE_CLASS[t] || "pet-etc";
-  return chip(t, `pet-type ${cls}`);
+function renderOptionLines(stack, values) {
+  const lines = new Array(3).fill("-");
+  values.forEach((val, i) => {
+    if (i < 3 && val) lines[i] = val;
+  });
+  lines.forEach(line => stack.append(elt("div", "option-line", line)));
 }
 
 /* ---------- 메인 렌더 ---------- */
@@ -425,9 +93,11 @@ function renderAll(data, worldLabel) {
         if (icon) card.append(icon); else card.append(elt("div"));
         const meta = document.createElement("div");
         const region = stripPrefix(sym.symbol_name || "-");
-        meta.append(elt("div", "name", `${kind} : ${region}`));
+        meta.append(elt("div", "symbol-name", `${kind} : ${region}`));
+        if (sym.symbol_level != null) {
+          meta.append(elt("div", "symbol-level", `Lv. ${sym.symbol_level}`));
+        }
         const chips = [];
-        if (sym.symbol_level != null) chips.push(`Lv. ${sym.symbol_level}`);
         effectTextToChips(sym.symbol_option).forEach((c) => chips.push(c));
         chipStack(meta, chips, "stacked");
         card.append(meta);
@@ -453,18 +123,6 @@ function renderAll(data, worldLabel) {
   const hadOnePiece = !!slotMap["한벌옷"];
   if (hadOnePiece) { slotMap["상의"] = slotMap["한벌옷"]; slotMap.__onePiece = true; delete slotMap["한벌옷"]; }
 
-  function threeLineRows(body, values = [], labelPrefix) {
-    const rows = [values[0], values[1], values[2]];
-    for (let i=0;i<3;i++){
-      const v = rows[i];
-      const row = document.createElement("div");
-      row.className = "chip-row";
-      row.append(chip(`${labelPrefix} ${i+1}`, "mini lbl"));
-      row.append(chip(v ? v : "없음"));
-      body.append(row);
-    }
-  }
-
   function buildEquipCard(slotLabel, item, noteWhenEmpty="장비 없음") {
     const gradeName = item?.item_grade || "";
     const borderCls = GRADE_BORDER_CLASS[gradeName] || "grade-border-normal";
@@ -489,18 +147,19 @@ function renderAll(data, worldLabel) {
       const todd  = normalizeAbilityFlag(item.todd_able, "전수 가능", "전수 불가");
       if (trans || todd) body.append(chipRow(trans ? chip(trans) : null, todd ? chip(todd) : null));
 
+      body.append(elt("hr", "divider"));
+
       const mainOpts = effectTextToChips(item.item_option);
       if (mainOpts.length) {
-        body.append(chipSection("장비의 주옵션", (stack)=>{ mainOpts.forEach(o=>stack.append(chipRow(chip(o)))); }));
+        body.append(chipSection("장비의 주옵션", (stack)=>{ mainOpts.forEach(o=>stack.append(elt("div", "option-line", o))); }));
       }
 
       if (!isAccessorySlot(slotLabel)) {
-        const potVals = (item.item_potential_option || []).map(p => p?.option_name ? `${p.option_name} ${p.option_value ?? ""}`.trim() : null).filter(Boolean);
-        const addVals = (item.item_additional_potential_option || []).map(p => p?.option_name ? `${p.option_name} ${p.option_value ?? ""}`.trim() : null).filter(Boolean);
-        body.append(
-          chipSection("잠재능력", (stack)=> threeLineRows(stack, potVals, "잠재능력")),
-          chipSection("애디셔널", (stack)=> threeLineRows(stack, addVals, "애디셔널"))
-        );
+        const potVals = (item.item_potential_option || []).map(p => p?.option_name ? `${p.option_name} ${p.option_value ?? ""}`.trim() : null);
+        body.append(chipSection("잠재능력", (stack) => renderOptionLines(stack, potVals)));
+
+        const addVals = (item.item_additional_potential_option || []).map(p => p?.option_name ? `${p.option_name} ${p.option_value ?? ""}`.trim() : null);
+        body.append(chipSection("애디셔널", (stack) => renderOptionLines(stack, addVals)));
       }
 
       if (item.soul_equipment_flag === "1" && item.soul_info) {
@@ -587,8 +246,7 @@ function renderAll(data, worldLabel) {
       const gems = pg.jewel_info || [];
       if (!gems.length) five.append(emptyCard("젬 없음"));
       gems.forEach(j=>{
-        const card = elt("div","jewel-card has-topchip " + (j.jewel_grade?`grade-${String(j.jewel_grade).toUpperCase()}`:""));
-        card.append(chip(`슬롯 ${j.slot_no ?? "-"}`, "mini top-left"));
+        const card = elt("div","jewel-card " + (j.jewel_grade?`grade-${String(j.jewel_grade).toUpperCase()}`:""));
         const icon = safeImg(j.jewel_icon, j.jewel_name, 48, "jewel-icon");
         const meta = document.createElement("div"); meta.className="jewel-meta";
         meta.append(elt("span","name", j.jewel_name || "-"));
@@ -709,6 +367,7 @@ function renderAll(data, worldLabel) {
 
   /* 스킬 장착 (기존) */
   const eqSkills = S.skill_equipment?.data?.skill?.equipment_skill || [];
+  const skillPresets = S.skill_equipment?.data?.skill?.preset || [];
   const skList = $("#skill-list"); skList.innerHTML = "";
   const presetDiv = $("#skill-presets"); presetDiv.textContent = "";
   if (eqSkills.length) {
@@ -723,18 +382,77 @@ function renderAll(data, worldLabel) {
     [...bySet.entries()].sort((a,b)=>a[0]-b[0]).forEach(([setNo, items])=>{
       const card = elt("div","skill-set");
       card.append(h4(`세트 ${setNo}`));
-      const grid = elt("div","grid-3");
+      const grid = elt("div", "skill-grid");
       items.forEach(s=>{
-        const mc = elt("div","mini-card has-topchip skill-card");
-        mc.append(chip(`슬롯 ${s.slot_id ?? "-"}`, "mini top-left"));
-        mc.append(elt("div","skill-name", s.skill_name || "-"));
-        if (s.skill_level != null) mc.append(chipRow(chip(`Lv. ${s.skill_level}`, "mini")));
+        const { name, level } = parseSkillNameAndLevel(s.skill_name);
+        const mc = elt("div", "skill-card");
+        mc.append(elt("div", "skill-name", name));
+        if (level != null) {
+          mc.append(elt("div", "skill-level", `Lv. ${level}`));
+        }
         grid.append(mc);
       });
       card.append(grid);
       skList.append(card);
     });
+
+    const allSkillCards = skList.querySelectorAll('.skill-card');
+    if (allSkillCards.length > 0) {
+      let maxHeight = 0;
+      allSkillCards.forEach(c => {
+        if (c.offsetHeight > maxHeight) {
+          maxHeight = c.offsetHeight;
+        }
+      });
+
+      if (maxHeight > 0) {
+        allSkillCards.forEach(c => {
+          c.style.height = `${maxHeight}px`;
+        });
+      }
+    }
   } else { $("#skills").classList.remove("hidden"); skList.append(emptyCard("스킬 장착 없음")); }
+
+  /* 스킬 프리셋 */
+  const presetsSection = $("#skill_presets_section");
+  const presetsList = $("#skill_presets_list");
+  presetsList.innerHTML = "";
+
+  if (skillPresets.length) {
+    presetsSection.classList.remove("hidden");
+
+    skillPresets.sort((a, b) => a.preset_slot_no - b.preset_slot_no).forEach(p => {
+      const presetContainer = elt("div", "skill-preset-group");
+      presetContainer.append(h4(`${p.preset_slot_no}번 스킬 프리셋`));
+
+      const grid = elt("div", "skill-preset-grid");
+      const skills = [
+        p.skill_name_1,
+        p.skill_name_2,
+        p.skill_name_3,
+        p.skill_name_4
+      ];
+
+      skills.forEach(skillName => {
+        if (skillName) {
+          const { name, level } = parseSkillNameAndLevel(skillName);
+          const mc = elt("div", "skill-card");
+          mc.append(elt("div", "skill-name", name));
+          if (level != null) {
+            mc.append(elt("div", "skill-level", `Lv. ${level}`));
+          }
+          grid.append(mc);
+        } else {
+          const emptySlot = elt("div", "skill-card empty-slot", "비어있음");
+          grid.append(emptySlot);
+        }
+      });
+      presetContainer.append(grid);
+      presetsList.append(presetContainer);
+    });
+  } else {
+    presetsSection.classList.add("hidden");
+  }
 
   /* 링크 스킬 — 스킬명 → 레벨 → 효과 */
   const linkPresets = S.link_skill?.data?.link_skill || [];
@@ -750,13 +468,58 @@ function renderAll(data, worldLabel) {
       const grid = elt("div","grid-2");
       const arr = p.link_skill_info || [];
       if (!arr.length) grid.append(emptyCard("링크 없음"));
-      arr.forEach(ls=>{
+
+      const groupedSkills = new Map();
+      arr.forEach(ls => {
+        if (!groupedSkills.has(ls.skill_name)) {
+          groupedSkills.set(ls.skill_name, {
+            ...ls,
+            skill_level: 0,
+            effects: new Map(),
+            count: 0
+          });
+        }
+        const entry = groupedSkills.get(ls.skill_name);
+        entry.skill_level += ls.skill_level;
+        entry.count++;
+
+        if (ls.skill_effect) {
+            const effects = ls.skill_effect.split(',').map(e => e.trim());
+            effects.forEach(eff => {
+                const parts = eff.split(':').map(part => part.trim());
+                if (parts.length === 2) {
+                    const name = parts[0];
+                    const { num, unit } = parseEffectValue(parts[1]);
+                    if (entry.effects.has(name)) {
+                        entry.effects.get(name).num += num;
+                    } else {
+                        entry.effects.set(name, { num, unit });
+                    }
+                }
+            });
+        }
+      });
+      
+      const aggregatedSkills = Array.from(groupedSkills.values());
+      aggregatedSkills.forEach(ls => {
+          let combinedEffect = "";
+          if (ls.effects.size > 0) {
+              const effectParts = [];
+              ls.effects.forEach((value, name) => {
+                  effectParts.push(`${name} : ${value.num.toLocaleString()}${value.unit}`);
+              });
+              combinedEffect = effectParts.join(', ');
+          }
+          ls.skill_effect = combinedEffect;
+          
         const cell = elt("div","mini-card link-card");
         const ic = safeImg(ls.skill_icon, ls.skill_name, 28);
         if (ic) { cell.classList.add("with-icon"); cell.prepend(ic); }
         const meta = elt("div","link-meta");
         meta.append(elt("div","skill-name", ls.skill_name || "-"));
-        if (ls.skill_level != null) meta.append(chipRow(chip(`Lv. ${ls.skill_level}`, "mini")));
+        if (ls.skill_level != null) {
+          meta.append(elt("div", "skill-level", `Lv. ${ls.skill_level}`));
+        }
         if (ls.skill_effect) {
           const chips = effectTextToChips(ls.skill_effect);
           const st = elt("div","chip-stack stacked");
@@ -776,32 +539,54 @@ function renderAll(data, worldLabel) {
   const vList = $("#v-list"); vList.innerHTML = "";
   if (vcores.length) {
     $("#vmatrix").classList.remove("hidden");
-    const grid = elt("div","v-grid v-grid-2x15");
-    vcores.forEach(v=>{
-      const card = elt("div","v-card has-topchip");
-      card.style.alignSelf = "start"; // 상단정렬 보강
-      card.append(chip(`슬롯 ${v.slot_id ?? "-"}`, "mini top-left"));
-      card.append(elt("div","v-name", v.v_core_name || "-"));
 
+    const coreGroups = { enhancement: [], skill: [], special: [] };
+    const typeMap = { enhancement: "강화 코어", skill: "스킬 코어", special: "특수 코어" };
+    vcores.forEach(v => {
       const type = (v.v_core_type || "").toLowerCase();
-      const typeShort = type==="skill" ? "Skill" : type==="enhancement" ? "Enhancement" : "Special";
-      const levelChip = (v.v_core_level!=null) ? chip(`${typeShort}Lv. ${v.v_core_level}`, "mini") : null;
-      const typeCls = type ? `vtype-${type}` : "";
-      if (levelChip) { levelChip.classList.add(typeCls); card.append(chipRow(levelChip)); }
-
-      if (type === "enhancement") {
-        const names = [v.v_core_skill_name_1, v.v_core_skill_name_2, v.v_core_skill_name_3].filter(s=>s && s !== "(Unknown)");
-        if (names.length) {
-          const sec = chipSection("강화 대상", (stack)=> names.forEach(nm=>stack.append(chipRow(chip(nm)))));
-          card.append(sec);
-        }
-      }
-      const desc = [];
-      if (v.v_core_skill_effect) effectTextToChips(v.v_core_skill_effect).forEach(c=>desc.push(c));
-      if (desc.length) chipStack(card, desc, "stacked");
-
-      grid.append(card);
+      if (coreGroups[type]) coreGroups[type].push(v);
     });
-    vList.append(grid);
+
+    Object.entries(typeMap).forEach(([type, title]) => {
+      const cores = coreGroups[type];
+      if (cores.length === 0) return;
+      
+      const groupEl = elt("div", "v-group");
+      groupEl.append(h4(title));
+      const grid = elt("div", "v-grid");
+      
+      cores.forEach(v => {
+        const type = (v.v_core_type || "").toLowerCase();
+        const card = elt("div", "v-card has-topchip");
+        if (type) card.classList.add(`vtype-${type}`);
+        card.style.alignSelf = "start";
+
+        const typeShort = type === "skill" ? "스킬 코어" : type === "enhancement" ? "강화 코어" : "특수 코어";
+        card.append(chip(typeShort, "mini top-left"));
+
+        const nameEl = elt("div", "v-name", v.v_core_name || "-");
+        card.append(nameEl);
+        
+        if (v.v_core_level != null) {
+          const levelEl = elt("div", "v-level", `Lv. ${v.v_core_level}`);
+          card.append(levelEl);
+        }
+
+        if (type === "enhancement") {
+          const names = [v.v_core_skill_name_1, v.v_core_skill_name_2, v.v_core_skill_name_3].filter(s => s && s !== "(Unknown)");
+          if (names.length) {
+            const sec = chipSection("강화 대상", (stack) => names.forEach(nm => stack.append(chipRow(chip(nm)))));
+            card.append(sec);
+          }
+        }
+        const desc = [];
+        if (v.v_core_skill_effect) effectTextToChips(v.v_core_skill_effect).forEach(c => desc.push(c));
+        if (desc.length) chipStack(card, desc, "stacked");
+
+        grid.append(card);
+      });
+      groupEl.append(grid);
+      vList.append(groupEl);
+    });
   } else { $("#vmatrix").classList.remove("hidden"); vList.append(emptyCard("V 매트릭스 없음")); }
 }

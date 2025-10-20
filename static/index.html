@@ -5,7 +5,9 @@
     <title>Maple M — 캐릭터 뷰어</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/static/styles.css" />
-    <script src="/static/app.js" defer></script>
+    <script src="/static/js/utils.js" defer></script>
+    <script src="/static/js/render.js" defer></script>
+    <script src="/static/js/main.js" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -73,6 +75,11 @@
         <h3>스킬 장착</h3>
         <div id="skill-presets" class="muted small"></div>
         <ul id="skill-list" class="list"></ul>
+      </section>
+
+      <section id="skill_presets_section" class="card hidden">
+        <h3>스킬 프리셋</h3>
+        <div id="skill_presets_list"></div>
       </section>
 
       <section id="links" class="card hidden">

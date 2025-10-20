@@ -32,14 +32,21 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 .center{text-align:center}
 
 /* 스탯 */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--grid-gap);margin-top:10px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--grid-gap);margin-top:10px}
 .stat{background:#0b151d;border:1px solid #15212b;border-radius:8px;padding:8px}
+.stat.full { grid-column: 1 / -1; }
 .stat .k{color:#90a4b4}
 
 /* 칩 */
 .chip{display:inline-block;padding:4px 8px;border:1px solid var(--chip-bd);background:var(--chip-bg);color:var(--chip-tx);border-radius:6px;font-size:12px;vertical-align:top}
+.chip-title { font-weight: bold; margin-bottom: 4px; font-size: 14px; }
 .chip-row{display:block;margin-top:4px}
 .chip-stack.stacked{margin-top:6px}
+.option-line {
+  font-size: 12px;
+  color: var(--chip-tx);
+  padding: 2px 4px;
+}
 .chip.mini{font-size:11px;padding:2px 6px}
 .chip.top-right,.chip.top-left{position:absolute;top:6px;z-index:1;pointer-events:none}
 .chip.top-left{left:6px}
@@ -74,7 +81,16 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 .equip .name{font-weight:800;font-size:14px}
 .equip .slot-label{font-weight:600;color:#9db3c6}
 .equip .note{color:#5f7385;font-size:12px;margin-top:6px}
+.equip .chip-section { margin-top: 8px; }
+.equip hr.divider {
+  border: none;
+  border-top: 1px solid #223244;
+  margin: 8px 0;
+}
 .equip.empty{opacity:.7;background:#091017;border-style:dashed}
+.soul { margin-top: 8px; }
+.soul-title { font-weight: bold; font-size: 14px; color: #d6b4ff; }
+.soul-opt { color: #ffadda; }
 
 /* 심볼 */
 .symbol-groups{display:grid;gap:12px}
@@ -83,6 +99,8 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 .symbol-card{position:relative;display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:flex-start;padding:10px;border:1px solid #1c2733;border-radius:10px;background:#0a1219}
 .symbol-card.has-topchip{padding-top:32px}
 .symbol-card img{width:56px;height:56px;object-fit:contain;border:1px solid #1c2a35;background:#0b151d;border-radius:8px}
+.symbol-name { font-weight: 800; font-size: 14px; }
+.symbol-level { font-size: 12px; color: var(--muted); }
 
 /* 세트 효과 2단 */
 .set-grid{display:grid;grid-template-columns:repeat(2,minmax(300px,1fr));gap:12px}
@@ -131,6 +149,9 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 .skill-name,.pet-name{font-weight:800;font-size:14px}
 .mini-sub{color:var(--muted);font-size:12px;white-space:normal}
 
+/* 링크 카드 높이 고정 */
+.link-card { min-height: 100px; }
+
 /* 펫 칩 */
 .pet-card .pet-name{font-weight:800;font-size:14px}
 .pet-type{margin-top:4px}
@@ -147,15 +168,66 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 /* 스킬/링크 */
 .skill-set{border:1px solid #1c2733;border-radius:12px;background:#0a1219;padding:10px}
 .skill-set h4{margin:0 0 8px;color:#cfe9ff;font-size:14px}
-.grid-3{display:grid;grid-template-columns:repeat(3,minmax(200px,1fr));gap:8px}
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+.skill-card {
+  border: 1px solid #1a2631;
+  border-radius: 10px;
+  background: #0b141c;
+  padding: 8px;
+}
+.skill-card.empty-slot {
+  border-style: dashed;
+  border-color: #33485c;
+  background: #0a1219;
+  color: #9db3c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-preset-grid > .skill-card,
+.skill-preset-grid > .empty-card {
+  height: 100%;
+}
+
+.skill-level {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.skill-preset-group {
+  margin-bottom: 16px;
+}
+.skill-preset-group h4 {
+  margin: 0 0 8px;
+  color: #cfe9ff;
+  font-size: 14px;
+}
+.skill-preset-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
 .grid-2{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:8px}
 
-/* V 매트릭스 2×15 — 상단정렬 보장 */
-.v-grid{display:grid;gap:10px;align-items:start}
-.v-grid.v-grid-2x15{grid-template-columns:repeat(2,minmax(320px,1fr));grid-auto-rows:minmax(0,auto);align-items:start}
-.v-card{position:relative;border:1px solid #1a2631;border-radius:10px;background:#0b141c;padding:10px;display:grid;gap:6px;align-items:flex-start;min-height:72px;align-self:start}
+/* V 매트릭스 */
+.v-group { margin-bottom: 16px; }
+.v-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));}
+.v-card{position:relative;border:1px solid #1a2631;border-radius:10px;background:#0b141c;padding:10px;display:grid;gap:2px;align-items:flex-start;min-height:72px;align-self:start}
 .v-card.has-topchip{padding-top:32px}
-.v-name{font-weight:800;font-size:14px}
+.v-name{font-weight:800;font-size:14px;margin-top: 2px; line-height: 1.2;}
+.v-level { font-size: 12px; color: var(--muted); }
+.v-card .chip.mini { font-size: 10px; }
+
+.v-card.vtype-skill { border-color: var(--v-skill-bd); }
+.v-card.vtype-enhancement { border-color: var(--v-enh-bd); }
+.v-card.vtype-special { border-color: var(--v-spc-bd); }
+
 .chip.vtype-skill{background:var(--v-skill-bg);border-color:var(--v-skill-bd);color:var(--v-skill-tx)}
 .chip.vtype-enhancement{background:var(--v-enh-bg);border-color:var(--v-enh-bd);color:var(--v-enh-tx)}
 .chip.vtype-special{background:var(--v-spc-bg);border-color:var(--v-spc-bd);color:var(--v-spc-tx)}
@@ -163,4 +235,4 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 /* 상태/없음 */
 .status{padding:12px;border:1px dashed #223244;border-radius:10px}
 .muted{color:var(--muted)}
-.empty-card{border:1px dashed #33485c;background:#0a1219;border-radius:10px;padding:16px;color:#9db3c6;text-align:center}
+.empty-card{border:1px dashed #33485c;background:#0a1219;border-radius:10px;padding:16px;color:#9db3c6;text-align:center; display: flex; align-items: center; justify-content: center;}
