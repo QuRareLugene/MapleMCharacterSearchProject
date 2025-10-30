@@ -68,7 +68,8 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 
 /* 장비 그룹 & 동일폭 */
 .equip-wrap{display:grid;gap:18px}
-.equip-group h4{margin:0 0 8px 2px;color:#cfe9ff;font-size:14px}
+.equip-group{display:grid;gap:8px}
+.equip-group h4{margin:0 0 0 2px;color:#cfe9ff;font-size:14px}
 .equip-grid{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:var(--grid-gap)}
 .row-grid-2.equal{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:var(--grid-gap)}
 .row-grid-3.equal{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:var(--grid-gap)}
@@ -216,6 +217,16 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 
 .grid-2{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:8px}
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+}
+
+.preset-card{border:1px solid #1c2733;border-radius:12px;background:#0a1219;padding:10px}
+.preset-card.active{border-color:#ffd34d}
+.preset-card h4{margin:0 0 8px;color:#cfe9ff;font-size:14px}
+
 /* V 매트릭스 */
 .v-group { margin-bottom: 16px; }
 .v-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));}
@@ -227,13 +238,131 @@ main{max-width:1100px;margin:22px auto;padding:0 16px;display:grid;gap:14px}
 
 .v-card.vtype-skill { border-color: var(--v-skill-bd); }
 .v-card.vtype-enhancement { border-color: var(--v-enh-bd); }
-.v-card.vtype-special { border-color: var(--v-spc-bd); }
+.v-card.vtype-special { border-color: #55acee; }
 
 .chip.vtype-skill{background:var(--v-skill-bg);border-color:var(--v-skill-bd);color:var(--v-skill-tx)}
 .chip.vtype-enhancement{background:var(--v-enh-bg);border-color:var(--v-enh-bd);color:var(--v-enh-tx)}
 .chip.vtype-special{background:var(--v-spc-bg);border-color:var(--v-spc-bd);color:var(--v-spc-tx)}
 
+/* 그리드 리스트 (2단) */
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* HEXA 매트릭스 & 하이퍼스탯 */
+.hexa-stat-core {
+  border: 1px solid #1c2733;
+  border-radius: 12px;
+  background: #0a1219;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+.hexa-stat-core h4 {
+  margin: 0 0 8px;
+  color: #cfe9ff;
+  font-size: 14px;
+}
+.hexa-stat-page {
+  border: 1px solid #1a2631;
+  border-radius: 10px;
+  background: #0b141c;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.hexa-stat-page .chip.active {
+  border-color: var(--grade-legendary);
+  color: #c9f7df;
+  background: rgba(47,209,122,.14);
+}
+.hexa-stat-page .mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+.stat-card {
+  border: 1px solid #1a2631;
+  border-radius: 10px;
+  background: #0b141c;
+  padding: 8px;
+  min-height: 56px;
+}
+.stat-card .stat-name {
+  font-weight: 800;
+  font-size: 14px;
+}
+.stat-card .stat-level {
+  font-size: 12px;
+  color: var(--muted);
+}
+.hexa-skill-card {
+  position: relative;
+  border: 1px solid #1a2631;
+  border-radius: 10px;
+  background: #0b141c;
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+.hexa-skill-card .skill-meta {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+.hexa-skill-card .skill-desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #1a2631;
+}
+.hexa-skill-group {
+  margin-bottom: 16px;
+}
+.hexa-skill-group h4 {
+  margin: 0 0 8px;
+  color: #cfe9ff;
+  font-size: 14px;
+}
+
+/* 유니온 전투 지도 */
+.union-map {
+  display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 22 / 20;
+  border: 1px solid #33485c;
+  background: #0a1219;
+  border-radius: 8px;
+  gap: 1px;
+  padding: 2px;
+}
+.union-map-cell {
+  background-color: #15212b;
+  border-radius: 2px;
+}
+.union-map-block {
+  background-color: #4cc2ff;
+  border: 1px solid #1a2631;
+}
+.union-block-type-0 { background-color: #B0BEC5; } /* 공통, 회색 */
+.union-block-type-1 { background-color: #EF9A9A; } /* 전사, 붉은색 */
+.union-block-type-2 { background-color: #A5D6A7; } /* 궁수, 녹색 */
+.union-block-type-3 { background-color: #CE93D8; } /* 도적, 보라색 */
+.union-block-type-4 { background-color: #90CAF9; } /* 마법사, 파란색 */
+.union-block-type-5 { background-color: #FFCC80; } /* 해적, 주황색 */
+
 /* 상태/없음 */
 .status{padding:12px;border:1px dashed #223244;border-radius:10px}
 .muted{color:var(--muted)}
 .empty-card{border:1px dashed #33485c;background:#0a1219;border-radius:10px;padding:16px;color:#9db3c6;text-align:center; display: flex; align-items: center; justify-content: center;}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .equip-wrap { grid-template-columns: 1fr 1fr; }
+}

@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <title>Maple M — 캐릭터 뷰어</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="/static/styles.css" />
-    <script src="/static/js/utils.js" defer></script>
-    <script src="/static/js/render.js" defer></script>
-    <script src="/static/js/main.js" defer></script>
+    <script src="/static/js/main.js" type="module" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -37,7 +36,10 @@
           <img id="char-img" class="avatar" alt="character" />
           <div>
             <h2><span id="name"></span> <small id="job" class="pill"></small></h2>
-            <div class="meta"><span id="world-label"></span> · Lv.<span id="level"></span></div>
+            <div class="meta">
+              <span id="world-label"></span> · Lv.<span id="level"></span>
+              · <span id="guild"></span>
+            </div>
             <div class="meta small" id="times"></div>
           </div>
         </div>
@@ -91,6 +93,57 @@
       <section id="vmatrix" class="card hidden">
         <h3>V 매트릭스</h3>
         <ul id="v-list" class="list"></ul>
+      </section>
+
+      <section id="hexa-stat" class="card hidden">
+        <h3>HEXA 스탯</h3>
+        <div id="hexa-stat-list"></div>
+      </section>
+
+      <section id="hexa-skill" class="card hidden">
+        <h3>HEXA 스킬</h3>
+        <div id="hexa-skill-list"></div>
+      </section>
+
+      <section id="sub-skills" class="card hidden">
+        <h3>보조 스킬</h3>
+        <div id="sub-skills-list"></div>
+      </section>
+
+      <section id="hyper-stats" class="card hidden">
+        <h3>하이퍼스탯</h3>
+        <div id="hyper-stats-list" class="grid-list"></div>
+      </section>
+
+      <section id="union" class="card hidden">
+        <h3>유니온</h3>
+        <div id="union-info"></div>
+        <div class="row-grid-2 equal">
+          <div>
+            <h4>공격대원</h4>
+            <div id="union-raiders" class="mini-grid"></div>
+          </div>
+          <div>
+            <h4>공격대 점령 효과</h4>
+            <div id="union-effects" class="mini-grid"></div>
+          </div>
+        </div>
+        <div class="block-gap"></div>
+        <h4 id="union-map-title">전투 지도</h4>
+        <div id="union-map-wrap"></div>
+        <div class="block-gap"></div>
+        <div id="union-area-effects-wrap"></div>
+      </section>
+
+      <section id="guild-sec" class="card hidden">
+        <h3>길드</h3>
+        <div id="guild-info"></div>
+        <h4>길드원</h4>
+        <div id="guild-members" class="grid-list"></div>
+        <h4>길드 스킬</h4>
+        <div id="guild-skills" class="grid-list"></div>
+        <h4>길드 어빌리티</h4>
+        <div id="guild-abilities" class="grid-list"></div>
       </section>
 
       <section id="export" class="card center">

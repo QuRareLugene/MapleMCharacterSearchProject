@@ -212,3 +212,86 @@ function petTypeChip(type = "") {
   const cls = typeToClass[category] || "grade-rare";
   return chip(category, cls);
 }
+
+const KNOWN_EFFECT_KEYS = [
+  '최종 대미지', '물리 대미지', '마법 대미지', '공격력', '마력',
+  '크리티컬 확률', '크리티컬 데미지', '보스 공격력', '보스 방어율 무시',
+  'HP', 'MP', '물리 방어력', '마법 방어력', '회피율', '이동 속도',
+  '경험치 획득량', '파티 경험치 획득량', '메소 획득량', '아이템 드롭률',
+  '피버 충전량', '피버 버프 시간 증가', '맥스피버 확률', '맥스 피버 확률', '피버킬 어드밴티지',
+  '버프중 최종 대미지', '버프 시간', '재발동 대기 시간', '스탠스 확률',
+  '물리 공격력', '마법 공격력', '최대 HP', '최대 MP', '치명타 확률', '치명타 피해',
+  '재발동대기시간', '버프중최종대미지'
+].sort((a, b) => b.length - a.length);
+
+const UNIQUE_KNOWN_EFFECT_KEYS = [...new Set(KNOWN_EFFECT_KEYS)].sort((a, b) => b.length - a.length);
+
+function parseEffectString(str) {
+  const effects = new Map();
+  if (!str) return effects;
+
+  let remainingStr = str.replace(/\n/g, ' ').trim();
+  
+  // A regular expression to find all occurrences of key-value pairs.
+  const regex = /([^,]+?)\s*:\s*(-?[\d.,]+%?초?)/g;
+  let match;
+
+  while ((match = regex.exec(remainingStr)) !== null) {
+    const key = match[1].trim();
+    const value = match[2].trim();
+
+    const numMatch = value.match(/(-?[\d.,]+)/);
+    const num = numMatch ? parseFloat(numMatch[1].replace(/,/g, '')) : 0;
+    const unit = value.replace(/-?[\d.,\s]/g, '');
+
+    if (key) {
+      if (numMatch) {
+        effects.set(key, { num, unit });
+      } else {
+        effects.set(key, { num: value, unit: '' });
+      }
+    }
+  }
+
+  return effects;
+}
+
+function formatEffectString(effects) {
+  const lines = [];
+  for (const [key, { num, unit }] of effects.entries()) {
+    if (typeof num === 'number') {
+      lines.push(`${key} : ${num}${unit || ''}`);
+    } else {
+      lines.push(`${key} : ${num || ''}`);
+    }
+  }
+  return lines.join('\n');
+}
+
+export {
+  $,
+  chip,
+  chipRow,
+  chipStack,
+  chipSection,
+  toManNotation,
+  effectTextToChips,
+  setEffectToChips,
+  looksLikeHash,
+  normalizeIconUrl,
+  normalizeAllIconsInPlace,
+  GRADE_CHIP_CLASS,
+  GRADE_BORDER_CLASS,
+  isAccessorySlot,
+  normalizeAbilityFlag,
+  elt,
+  safeImg,
+  emptyCard,
+  h4,
+  normalizeSlot,
+  EQUIP_GROUPS,
+  inferPetType,
+  petTypeChip,
+  parseEffectString,
+  formatEffectString
+};

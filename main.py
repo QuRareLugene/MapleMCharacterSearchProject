@@ -35,6 +35,7 @@ M_PATHS = {
     "id": "/maplestorym/v1/id",
     "basic": "/maplestorym/v1/character/basic",
     "stat": "/maplestorym/v1/character/stat",
+    "hyper_stat": "/maplestorym/v1/character/hyper-stat",
     "item_equipment": "/maplestorym/v1/character/item-equipment",
     "set_effect": "/maplestorym/v1/character/set-effect",
     "jewel": "/maplestorym/v1/character/jewel",
@@ -44,6 +45,12 @@ M_PATHS = {
     "link_skill": "/maplestorym/v1/character/link-skill",
     "vmatrix": "/maplestorym/v1/character/vmatrix",
     "symbol": "/maplestorym/v1/character/symbol",
+    "union": "/maplestorym/v1/user/union",
+    "union_raider": "/maplestorym/v1/user/union-raider",
+    "guild_id": "/maplestorym/v1/guild/id",
+    "guild_basic": "/maplestorym/v1/guild/basic",
+    "hexamatrix_skill": "/maplestorym/v1/character/hexamatrix-skill",
+    "hexamatrix_stat": "/maplestorym/v1/character/hexamatrix-stat",
 }
 
 WorldName = Literal["아케인", "크로아", "엘리시움", "루나", "스카니아", "유니온", "제니스"]
@@ -107,7 +114,20 @@ async def resolve_ocid_maplem(name_or_ocid: str, world_name: str) -> str:
         raise HTTPException(404, detail=f"ID lookup failed for '{name_or_ocid}' in world '{world_name}'")
     return ocid
 
-async def fetch_all_sections(ocid: str) -> dict:
+async def resolve_oguildid(guild_name: str, world_name: str) -> str | None:
+    try:
+        data = await nx_get(M_PATHS["guild_id"], {"guild_name": guild_name, "world_name": world_name})
+        oguildid = data.get("oguild_id")
+        if not oguildid:
+            return None
+        return oguildid
+    except HTTPException as e:
+        if e.status_code == 404:
+            return None
+        raise e
+
+
+async def fetch_all_sections(ocid: str, world_name: str) -> dict:
     if ocid in cache:
         return cache[ocid]
     if ocid in INFLIGHT:
@@ -118,12 +138,30 @@ async def fetch_all_sections(ocid: str) -> dict:
         order = [
             "basic", "stat", "item_equipment", "set_effect", "symbol",
             "jewel", "android_equipment", "pet_equipment", "skill_equipment",
-            "link_skill", "vmatrix"
+            "link_skill", "vmatrix", "hyper_stat", "hexamatrix_skill", "hexamatrix_stat"
         ]
         out: dict[str, Any] = {}
+        # 캐릭터 기반 정보
         for key in order:
             out[key] = await nx_get(M_PATHS[key], params)
             await asyncio.sleep(0.1)
+
+        # 유저 기반 정보 (유니온)
+        out["union"] = await nx_get(M_PATHS["union"], params)
+        out["union_raider"] = await nx_get(M_PATHS["union_raider"], params)
+        await asyncio.sleep(0.1)
+
+        # 길드 정보 (월드 기반)
+        guild_name = out.get("basic", {}).get("character_guild_name")
+        if guild_name:
+            oguildid = await resolve_oguildid(guild_name, world_name)
+            if oguildid:
+                out["guild"] = await nx_get(M_PATHS["guild_basic"], {"oguild_id": oguildid})
+            else:
+                out["guild"] = None
+        else:
+            out["guild"] = None
+
 
         icon_set: set[str] = set()
         normalize_and_collect_icons(out, icon_set)
@@ -162,7 +200,7 @@ async def api_character(
     world_name: WorldName = Query(..., description="월드명(고정 선택)"),
 ):
     ocid = await resolve_ocid_maplem(q, world_name)
-    return await fetch_all_sections(ocid)
+    return await fetch_all_sections(ocid, world_name)
 
 if __name__ == "__main__":
     import uvicorn
