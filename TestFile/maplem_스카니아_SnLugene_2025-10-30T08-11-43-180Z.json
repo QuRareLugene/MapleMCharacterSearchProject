@@ -1,0 +1,2280 @@
+{
+  "basic": {
+    "character_name": "SnLugene",
+    "world_name": "스카니아",
+    "character_date_create": "2023-01-12T06:28:55Z",
+    "character_date_last_login": "2025-10-30T04:25:09.137Z",
+    "character_date_last_logout": "2025-10-30T04:25:26.115Z",
+    "character_job_name": "신궁",
+    "character_class": "신궁",
+    "character_gender": "Female",
+    "character_exp": 146883361643359,
+    "character_exp_rate": "51.25",
+    "character_level": 249,
+    "character_image": "https://open.api.nexon.com/static/maplestorym/character/code/d70b1526403999921e59bb70f479986ea26f68653391fd93378b75ae164ba415314e18394c8a4c37fdaf82b249cbc2f592a68033fe7606c2a3a85ed694b0f53cc82cb0fc448615f5f310ce5ed968635d20f0f26ad68ca1754c02890c5ff29679728ae06c3eda1fba809e961109d57fcc7d7675503ceeaeacb1496ecdd2af85e18100d255ece32fb53625db8d7e29c3bc4bfcb7a1c8e1c96d6f82799dba4cd3d96214566ef964e033fc5e661812581213?wmotion=W00"
+  },
+  "stat": {
+    "stat": [
+      {
+        "stat_name": "전투력",
+        "stat_value": "990313"
+      },
+      {
+        "stat_name": "물리 공격력",
+        "stat_value": "58507"
+      },
+      {
+        "stat_name": "마법 공격력",
+        "stat_value": "23461"
+      },
+      {
+        "stat_name": "물리 방어력",
+        "stat_value": "31763"
+      },
+      {
+        "stat_name": "마법 방어력",
+        "stat_value": "32306"
+      },
+      {
+        "stat_name": "HP",
+        "stat_value": "399786"
+      },
+      {
+        "stat_name": "MP",
+        "stat_value": "125763"
+      }
+    ]
+  },
+  "item_equipment": {
+    "character_class": "신궁",
+    "item_equipment": [
+      {
+        "item_name": "실버블라썸 링",
+        "item_equipment_page_name": "반지",
+        "item_equipment_slot_name": "반지 (2번째 슬롯)",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": "3",
+        "starforce_remain_count": 1,
+        "equipment_level": 96,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/8b56f8d7fc752d6fa319e8001b98a2b5457adf40c8b735a864f6444546c3f2c32fc0e9b820260ab6c69cd367010f41fde021571b0c04c02af9f5a11a10c58ccb",
+        "item_option": "물리 방어력 135, 마법 방어력 135",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "카오스 핑크빈 마크",
+        "item_equipment_page_name": "눈장식",
+        "item_equipment_slot_name": "눈장식",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 130,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/52a682f02cc6ff7727fe2f9e4497a227142dde3e0d856c84fd826533070adbbb5d3507a93726eb7b8fb0abaf1f81400f4b9d3607c1785e36624a33265c907a3a",
+        "item_option": "최대 HP 10,000, 치명타 피해 10%",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "전발적중",
+        "item_equipment_page_name": "보조무기",
+        "item_equipment_slot_name": "보조무기",
+        "item_grade": "유니크",
+        "item_combat_power": 726,
+        "starforce_upgrade": "15",
+        "starforce_remain_count": 0,
+        "equipment_level": 140,
+        "item_gender": "공용",
+        "cuttable_count": 9,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": "3",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6aa21676cb871b5f3c12c9b6a9044d8be40f62958716dc204bd993f3a9e6b4df3d63869d601bae5b9fd3591134a42e2ae9b2f7220ddaa8bfb10f94e9fbfa4540f4a148ae60eb0ca88828a51d9bf415fa",
+        "item_option": "물리 공격력 284",
+        "item_additional_option": [],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "치명타 확률",
+            "option_value": "1.90%"
+          },
+          {
+            "option_no": 2,
+            "option_name": "치명타 확률",
+            "option_value": "0.80%"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "1",
+        "soul_info": {
+          "soul_name": "화려한 시그너스의 소울",
+          "soul_option": "아이템 드롭률 2%"
+        },
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "[프리미엄] 이글아이 레인져후드",
+        "item_equipment_page_name": "상의",
+        "item_equipment_slot_name": "상의",
+        "item_grade": "유니크",
+        "item_combat_power": 4588,
+        "starforce_upgrade": "20",
+        "starforce_remain_count": 0,
+        "equipment_level": 170,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승 불가",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": "1",
+        "item_potential_option_grade": "2",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/2ce7c748cae28ec3d1c6a1c2e4e74d5c2200f8e3d3b07696612f023498d733f415fcf97328296051db22b9f78926e1d2b62947668959085cf7b340c56351c81e",
+        "item_option": "물리 방어력 732, 마법 방어력 732",
+        "item_additional_option": [
+          {
+            "option_no": 1,
+            "option_name": "HP 회복력",
+            "option_value": "9"
+          },
+          {
+            "option_no": 2,
+            "option_name": null,
+            "option_value": null
+          }
+        ],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 HP",
+            "option_value": "4,700"
+          },
+          {
+            "option_no": 2,
+            "option_name": "메소 획득량",
+            "option_value": "4.10%"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "[프리미엄] 트릭스터 레인져팬츠",
+        "item_equipment_page_name": "하의",
+        "item_equipment_slot_name": "하의",
+        "item_grade": "유니크",
+        "item_combat_power": 2304,
+        "starforce_upgrade": "20",
+        "starforce_remain_count": 0,
+        "equipment_level": 170,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승 불가",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": "1",
+        "item_potential_option_grade": "1",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/b63eeda12d5ded05eb5af6926f76be522027a5553bf9a7cab7e4734c50d73252d7a495fd50a76f1c09747f34e19113dff78cb84e8bf0e90677d48a9981ad3f97",
+        "item_option": "물리 방어력 366, 마법 방어력 366",
+        "item_additional_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 HP",
+            "option_value": "221"
+          },
+          {
+            "option_no": 2,
+            "option_name": null,
+            "option_value": null
+          }
+        ],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 MP",
+            "option_value": "1,001"
+          },
+          {
+            "option_no": 2,
+            "option_name": "최대 HP",
+            "option_value": "1,240"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "[프리미엄] 파프니르 윈드윙슈터",
+        "item_equipment_page_name": "석궁",
+        "item_equipment_slot_name": "무기",
+        "item_grade": "유니크",
+        "item_combat_power": 34880,
+        "starforce_upgrade": "20",
+        "starforce_remain_count": 0,
+        "equipment_level": 170,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승 불가",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": "2",
+        "item_potential_option_grade": "2",
+        "item_additional_potential_option_grade": "1",
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/9c2c9f28adce985e3d061966899c8cf21daff325bd2c39a1f4a87d15e57cc5ab533b1308cad8711791efcaf20213b515af98937541b1ef34a5e2ea9d7f6cedcfa33f2f83e2d26244b4e8eb29c1ff832d",
+        "item_option": "물리 공격력 22,190",
+        "item_additional_option": [
+          {
+            "option_no": 1,
+            "option_name": "물리 공격력",
+            "option_value": "705"
+          },
+          {
+            "option_no": 2,
+            "option_name": "치명타 확률",
+            "option_value": "1.90%"
+          }
+        ],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "치명타 확률",
+            "option_value": "5.10%"
+          },
+          {
+            "option_no": 2,
+            "option_name": "물리 대미지",
+            "option_value": "9.54%"
+          },
+          {
+            "option_no": 3,
+            "option_name": "물리 대미지",
+            "option_value": "3.60%"
+          }
+        ],
+        "item_additional_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "HP 회복력",
+            "option_value": "47"
+          },
+          {
+            "option_no": 2,
+            "option_name": "HP 회복력",
+            "option_value": "44"
+          },
+          {
+            "option_no": 3,
+            "option_name": "HP 회복력",
+            "option_value": "47"
+          }
+        ],
+        "soul_equipment_flag": "1",
+        "soul_info": {
+          "soul_name": "날렵한 시그너스의 소울",
+          "soul_option": "회피율 10%"
+        },
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "[프리미엄] 하이네스 레인져베레",
+        "item_equipment_page_name": "모자",
+        "item_equipment_slot_name": "모자",
+        "item_grade": "유니크",
+        "item_combat_power": 2993,
+        "starforce_upgrade": "20",
+        "starforce_remain_count": 0,
+        "equipment_level": 170,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승 불가",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": "1",
+        "item_potential_option_grade": "3",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/2ce7c748cae28ec3d1c6a1c2e4e74d5c92c0d8a29b77bdd3b73583f12bf5dda08e1402b6a0a71c586e028a136936f76fc1f5ce1640d3c7cd2b520d76d8843929",
+        "item_option": "물리 방어력 1,660, 마법 방어력 1,660",
+        "item_additional_option": [
+          {
+            "option_no": 1,
+            "option_name": "메소 획득량",
+            "option_value": "1.10%"
+          },
+          {
+            "option_no": 2,
+            "option_name": null,
+            "option_value": null
+          }
+        ],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "치명타 확률",
+            "option_value": "7.00%"
+          },
+          {
+            "option_no": 2,
+            "option_name": "HP 회복력",
+            "option_value": "25"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "다크 프리미엄 심볼",
+        "item_equipment_page_name": "얼굴장식",
+        "item_equipment_slot_name": "얼굴장식",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 106,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f289b9ac6b554a5163ec02e20429212ee099c8fa8129cf41746b37f3a2c48db91870b7dc956652c953076a16b498feda2be6365c0d953715d72f48e60a4eb2e3b",
+        "item_option": "물리 공격력 300, 마법 공격력 300",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "검은 노바의 휘장",
+        "item_equipment_page_name": "뱃지",
+        "item_equipment_slot_name": "뱃지",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 160,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/8049f16acaafbe19c40e57490e1035e9ab505f30ccfa793b60a916ec98ba947e73cb3ef7efaad2b4605ff64aa6de4f1f6450ecf4d8c74450fea14dcfceb84350",
+        "item_option": "치명타 확률 5%, 치명타 피해 5%",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "카오스 골든 클로버 벨트",
+        "item_equipment_page_name": "벨트",
+        "item_equipment_slot_name": "벨트",
+        "item_grade": "유니크",
+        "item_combat_power": 2554,
+        "starforce_upgrade": "17",
+        "starforce_remain_count": 1,
+        "equipment_level": 141,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": "3",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/8049f16acaafbe19c40e57490e1035e986895908b5ed1bf5609a2118ebc733909d7c6e12913df3099c4db8e9c7200790cd6687a8904fe793d6623949fe54dc5c",
+        "item_option": "물리 방어력 1,950, 마법 방어력 1,950",
+        "item_additional_option": [],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "MP 회복력",
+            "option_value": "24"
+          },
+          {
+            "option_no": 2,
+            "option_name": "최대 MP",
+            "option_value": "1,694"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "1",
+        "soul_info": {
+          "soul_name": "날렵한 시그너스의 소울",
+          "soul_option": "경험치 획득량 4%"
+        },
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "지옥의 불꽃",
+        "item_equipment_page_name": "귀고리",
+        "item_equipment_slot_name": "귀고리",
+        "item_grade": "유니크",
+        "item_combat_power": 2106,
+        "starforce_upgrade": "1",
+        "starforce_remain_count": 1,
+        "equipment_level": 160,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/52a682f02cc6ff7727fe2f9e4497a2276d3b464249a2f50489b80f53070742f37ef31bce9af2c055d2fe156c0936eeee",
+        "item_option": "물리 방어력 2,000, 마법 방어력 2,000",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "New 불멸의 파라오의 반지",
+        "item_equipment_page_name": "반지",
+        "item_equipment_slot_name": "반지 (3번째 슬롯)",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": "4",
+        "starforce_remain_count": 0,
+        "equipment_level": 135,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승 불가",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f76baebb9b4ab34823344b1a12611305b0fa59891ba2a309f94a47050e1d29049c85db44d05ad1287095279f6ab3cb5c83471d0c35e74d8612f30189afbd6a1f6",
+        "item_option": "물리 방어력 60, 마법 방어력 60",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "다크 소울링",
+        "item_equipment_page_name": "반지",
+        "item_equipment_slot_name": "반지",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": "10",
+        "starforce_remain_count": 0,
+        "equipment_level": 100,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": "2",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f76baebb9b4ab34823344b1a12611305b3e2d8895c5151629ca1792edba862fd65c90112a25fa73ca532722d4d88a6f9b",
+        "item_option": "물리 대미지 0.5%, 마법 대미지 0.5%, 이동 속도 3%",
+        "item_additional_option": [],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "메소 획득량",
+            "option_value": "4.40%"
+          },
+          {
+            "option_no": 2,
+            "option_name": "최대 HP",
+            "option_value": "640"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "앱솔랩스 아처슈즈",
+        "item_equipment_page_name": "신발",
+        "item_equipment_slot_name": "신발",
+        "item_grade": "레전더리",
+        "item_combat_power": 2775,
+        "starforce_upgrade": "15",
+        "starforce_remain_count": 1,
+        "equipment_level": 180,
+        "item_gender": "공용",
+        "cuttable_count": 1,
+        "transmission_able": "전승가능",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": "2",
+        "item_potential_option_grade": "2",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6aa21676cb871b5f3c12c9b6a9044d8be59e70c031e892cf4273b1877268e540659e6853832987373b28c24d9931c5969d6d3b68ee3816a60fa17fe136e37323",
+        "item_option": "물리 방어력 1,636, 마법 방어력 1,636",
+        "item_additional_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 MP",
+            "option_value": "667"
+          },
+          {
+            "option_no": 2,
+            "option_name": "아이템 드롭률",
+            "option_value": "2.20%"
+          }
+        ],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 MP",
+            "option_value": "2,106"
+          },
+          {
+            "option_no": 2,
+            "option_name": "최대 MP",
+            "option_value": "2,106"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "앱솔랩스 아처글러브",
+        "item_equipment_page_name": "장갑",
+        "item_equipment_slot_name": "장갑",
+        "item_grade": "레전더리",
+        "item_combat_power": 3838,
+        "starforce_upgrade": "22",
+        "starforce_remain_count": 1,
+        "equipment_level": 180,
+        "item_gender": "공용",
+        "cuttable_count": 2,
+        "transmission_able": "전승가능",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": "2",
+        "item_potential_option_grade": "2",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/7f47740288c5cf859b4954090c6033fba3a65af45262884d8e47f6435583ceb1276ec9da4b93b7581c1a0698f440263bd19682f419cee90b75304c2dc3e7ec30",
+        "item_option": "물리 방어력 1,963, 마법 방어력 1,963",
+        "item_additional_option": [
+          {
+            "option_no": 1,
+            "option_name": "방어율 무시",
+            "option_value": "1.62%"
+          },
+          {
+            "option_no": 2,
+            "option_name": "치명타 확률",
+            "option_value": "1.90%"
+          }
+        ],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 HP",
+            "option_value": "5,452"
+          },
+          {
+            "option_no": 2,
+            "option_name": "보스 공격력",
+            "option_value": "3.26%"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "앱솔랩스 아처숄더",
+        "item_equipment_page_name": "어깨",
+        "item_equipment_slot_name": "어깨",
+        "item_grade": "레전더리",
+        "item_combat_power": 2078,
+        "starforce_upgrade": "12",
+        "starforce_remain_count": 1,
+        "equipment_level": 180,
+        "item_gender": "공용",
+        "cuttable_count": 2,
+        "transmission_able": "전승가능",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": "3",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6aa21676cb871b5f3c12c9b6a9044d8b5eb4ceb5047fed616defcb68c57ba17860c1398000b98de9fdbd1f03f3046f409d5108e3feb50abf325ba186d7eb04da",
+        "item_option": "물리 방어력 1,440, 마법 방어력 1,440",
+        "item_additional_option": [],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "최대 HP",
+            "option_value": "9,984"
+          },
+          {
+            "option_no": 2,
+            "option_name": "최대 MP",
+            "option_value": "2,184"
+          },
+          {
+            "option_no": 3,
+            "option_name": "물리 대미지",
+            "option_value": "4.70%"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "1",
+        "soul_info": {
+          "soul_name": "화려한 시그너스의 소울",
+          "soul_option": "아이템 드롭률 2%"
+        },
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "앱솔랩스 아처케이프",
+        "item_equipment_page_name": "망토",
+        "item_equipment_slot_name": "망토",
+        "item_grade": "레전더리",
+        "item_combat_power": 420,
+        "starforce_upgrade": "13",
+        "starforce_remain_count": 1,
+        "equipment_level": 180,
+        "item_gender": "공용",
+        "cuttable_count": 2,
+        "transmission_able": "전승가능",
+        "todd_able": "전수 불가",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": "2",
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/2ce7c748cae28ec3d1c6a1c2e4e74d5c62038d9210ebd9cac4e45493b3eaff06dbccfef34588a9ce78e7bcf63a04d84e",
+        "item_option": "물리 방어력 297, 마법 방어력 297",
+        "item_additional_option": [],
+        "item_potential_option": [
+          {
+            "option_no": 1,
+            "option_name": "HP 회복력",
+            "option_value": "61"
+          },
+          {
+            "option_no": 2,
+            "option_name": "최대 HP",
+            "option_value": "4,700"
+          }
+        ],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "1",
+        "soul_info": {
+          "soul_name": "날렵한 시그너스의 소울",
+          "soul_option": "경험치 획득량 4%"
+        },
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "매커네이터 펜던트",
+        "item_equipment_page_name": "목걸이",
+        "item_equipment_slot_name": "목걸이",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 160,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/b63eeda12d5ded05eb5af6926f76be526794b116202b27d2c9b1030188032aefac7cda72f7235259d52a979d12500c42c57bcedb663b5dd16c951fc498ce977b",
+        "item_option": "물리 방어력 1,600, 마법 방어력 1,600",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "도미네이터 펜던트",
+        "item_equipment_page_name": "목걸이",
+        "item_equipment_slot_name": "목걸이 (2번째 슬롯)",
+        "item_grade": "레전더리",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 160,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/b63eeda12d5ded05eb5af6926f76be526794b116202b27d2c9b1030188032aef9c56ba0d09b799ef431bb5f8a0d022e568f5a2839ecf2d72efdbb9a1449116ec",
+        "item_option": "물리 공격력 3%, 마법 공격력 3%",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "과제의 달인",
+        "item_equipment_page_name": "훈장",
+        "item_equipment_slot_name": "훈장",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 1,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/5b4f10a7df753ae373bc91abaea1dfef2a48eb2e8103a94c7c93cc57bd309c747231ce7bee6c28fdb38755c54154e4c06fbf4d2d90a0b4e9fd71ab4fb59b3465",
+        "item_option": "경험치 획득량 15%",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "검은 천국의 구원자",
+        "item_equipment_page_name": "칭호",
+        "item_equipment_slot_name": "칭호",
+        "item_grade": "",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 1,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f4c974162cb4eb1b772000b8f7073cd8468b7733fe893600d5a5e076d258c9b4d032e7b09086ce42c592a04239954a21a",
+        "item_option": "경험치 획득량 10%",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      },
+      {
+        "item_name": "메이플M 출석왕 반지 ",
+        "item_equipment_page_name": "반지",
+        "item_equipment_slot_name": "반지 (4번째 슬롯)",
+        "item_grade": "유니크",
+        "item_combat_power": null,
+        "starforce_upgrade": null,
+        "starforce_remain_count": 0,
+        "equipment_level": 30,
+        "item_gender": "공용",
+        "cuttable_count": 0,
+        "transmission_able": "전승가능",
+        "todd_able": "전수가능",
+        "item_additional_option_grade": null,
+        "item_potential_option_grade": null,
+        "item_additional_potential_option_grade": null,
+        "item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/8b56f8d7fc752d6fa319e8001b98a2b547b4de7d0c9dc8e77e6d26dbcae07938c20bf06646e225a7fb458bf5878adb06",
+        "item_option": "경험치 획득량 20%, 물리 대미지 5%, 마법 대미지 5%",
+        "item_additional_option": [],
+        "item_potential_option": [],
+        "item_additional_potential_option": [],
+        "soul_equipment_flag": "0",
+        "soul_info": null,
+        "emblem_info": null,
+        "soul_set_option": "물리 공격력 600, 마법 공격력 600"
+      }
+    ]
+  },
+  "set_effect": {
+    "set_info": [
+      {
+        "set_name": "보스 전리품 세트",
+        "set_count": 4,
+        "set_option": "물리 방어력 1,000, 명중률 15%, 마법 방어력 1,000, 최대 HP 6,000, HP 회복력 400, 경험치 획득량 7%, 보스 방어력 3%"
+      },
+      {
+        "set_name": "루타비스 세트(유니크)",
+        "set_count": 4,
+        "set_option": "블록률 23.6%, 관통률 23.6%, 물리 공격력 45%, 물리 대미지 40%, 물리 피해 감소 26.3%, 치명타 피해 52.5%, 치명타 피해 감소 52.5%, 마법 공격력 45%, 마법 대미지 40%, 마법 피해 감소 26.3%"
+      },
+      {
+        "set_name": "군단장 전리품 세트",
+        "set_count": 4,
+        "set_option": "명중률 15%, 최대 HP 12,000, 최대 MP 10,000, 경험치 획득량 5%, 스탠스 5, 물리 피해 감소 4%, 마법 피해 감소 4%, 보스 공격력 7%, 보스 방어력 7%"
+      },
+      {
+        "set_name": "앱솔랩스 세트",
+        "set_count": 4,
+        "set_option": "블록률 36.5%, 관통률 36.5%, 최대 대미지 18,500,000, 물리 공격력 8%, 물리 대미지 8%, 물리 피해 감소 55%, 치명타 피해 69%, 치명타 피해 감소 69%, 마법 공격력 8%, 마법 대미지 8%, 마법 피해 감소 55%, 보스 공격력 8%, 보스 방어력 8%, 이동 속도 43%, 점프 높이 43%, 방어율 무시 11%"
+      }
+    ]
+  },
+  "symbol": {
+    "character_class": "신궁",
+    "arcane_symbol": [
+      {
+        "symbol_name": "아케인심볼 : 소멸의 여로",
+        "symbol_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a99574f145135d3715d0fe573eb280a1a7479f4bb864f5f8de8625c87c9bac4b4db3",
+        "symbol_level": 17,
+        "symbol_growth_value": 841,
+        "symbol_option": "아케인포스 증가 190, 물리 공격력 2,100"
+      },
+      {
+        "symbol_name": "아케인심볼 : 츄츄 아일랜드",
+        "symbol_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995ab2a9ce8066c9feab62de53f09bfbb4aa6824f5b63286b6aae767c973a8634de",
+        "symbol_level": 16,
+        "symbol_growth_value": 542,
+        "symbol_option": "아케인포스 증가 180, 물리 공격력 1,975"
+      },
+      {
+        "symbol_name": "아케인심볼 : 레헬른",
+        "symbol_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995221d7713233826211614e64f072a3ea3e170d9f1dca2d4e7bed9a6b06be5898a",
+        "symbol_level": 16,
+        "symbol_growth_value": 673,
+        "symbol_option": "아케인포스 증가 180, 물리 공격력 1,975"
+      },
+      {
+        "symbol_name": "아케인심볼 : 아르카나",
+        "symbol_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995bbe616d3465d49ee46e72cc0686b1f8b3980c0ea41a8aa6ed941741bd3c61550",
+        "symbol_level": 15,
+        "symbol_growth_value": 865,
+        "symbol_option": "아케인포스 증가 170, 물리 공격력 1,855"
+      },
+      {
+        "symbol_name": "아케인심볼 : 모라스",
+        "symbol_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a99584b87aabe500063e5f4e1e355dc70ea7ce110f3e07ad45c5020314c119b4b9fc",
+        "symbol_level": 16,
+        "symbol_growth_value": 1559,
+        "symbol_option": "아케인포스 증가 180, 물리 공격력 1,975"
+      },
+      {
+        "symbol_name": "아케인심볼 : 에스페라",
+        "symbol_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995bce6d16cdf67e4086bc7d46b0b88c919b369b4f19a267f8c4047a94bda49722a",
+        "symbol_level": 16,
+        "symbol_growth_value": 1262,
+        "symbol_option": "아케인포스 증가 180, 물리 공격력 1,975"
+      }
+    ],
+    "authentic_symbol": []
+  },
+  "jewel": {
+    "use_jewel_page_no": 2,
+    "use_jewel_set_option": "맥스 피버 확률 3%",
+    "jewel_equipment": [
+      {
+        "jewel_page_no": 1,
+        "jewel_info": [
+          {
+            "slot_no": 1,
+            "jewel_name": "SS등급 블루 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "블루",
+            "jewel_option": "물리 대미지 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b66621046626536d5e6f6f3edeff7246b1178a0765cb2ed6472e9b44bda1347100"
+          },
+          {
+            "slot_no": 2,
+            "jewel_name": "SS등급 블루 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "블루",
+            "jewel_option": "물리 대미지 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b66621046626536d5e6f6f3edeff7246b1178a0765cb2ed6472e9b44bda1347100"
+          },
+          {
+            "slot_no": 3,
+            "jewel_name": "SS등급 블루 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "블루",
+            "jewel_option": "물리 대미지 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b66621046626536d5e6f6f3edeff7246b1178a0765cb2ed6472e9b44bda1347100"
+          }
+        ]
+      },
+      {
+        "jewel_page_no": 2,
+        "jewel_info": [
+          {
+            "slot_no": 1,
+            "jewel_name": "SS등급 옐로우 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "옐로우",
+            "jewel_option": "아이템 드롭률 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945e56204d45ca62cc9c8fc58866c6e62d11"
+          },
+          {
+            "slot_no": 2,
+            "jewel_name": "SS등급 옐로우 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "옐로우",
+            "jewel_option": "아이템 드롭률 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945e56204d45ca62cc9c8fc58866c6e62d11"
+          },
+          {
+            "slot_no": 3,
+            "jewel_name": "SSS등급 옐로우 쥬얼",
+            "jewel_grade": "SSS",
+            "jewel_color": "옐로우",
+            "jewel_option": "아이템 드롭률 4.5%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945efb7c78997211e1a667ec6c6df63775ef"
+          },
+          {
+            "slot_no": 4,
+            "jewel_name": "SS등급 옐로우 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "옐로우",
+            "jewel_option": "아이템 드롭률 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945e56204d45ca62cc9c8fc58866c6e62d11"
+          },
+          {
+            "slot_no": 5,
+            "jewel_name": "SS등급 옐로우 쥬얼",
+            "jewel_grade": "SS",
+            "jewel_color": "옐로우",
+            "jewel_option": "아이템 드롭률 3.3%",
+            "jewel_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945e56204d45ca62cc9c8fc58866c6e62d11"
+          }
+        ]
+      }
+    ]
+  },
+  "android_equipment": {
+    "android_equipment": {
+      "android_name": "페어리로이드 (여)",
+      "android_nickname": null,
+      "android_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/8f41f32ffc6184b526e8cc57d54442a8a7bd134ecadb0a08f7665e3c851f5b50fb8ae5e850f7fca1c0f76b5e1d3b55ab",
+      "android_description": "필드의 페어리로이드 (여) 아이템 터치 시 창고를 이용할 수 있다.",
+      "android_grade": "9등급",
+      "android_gender": "여자",
+      "android_non_humanoid_flag": "0",
+      "android_warehouse_usable_flag": "1",
+      "android_ear_sensor_clip_flag": "0",
+      "android_cash_item_equipment": [
+        {
+          "cash_item_equipment_page_name": "모자",
+          "cash_item_equipment_slot_name": "모자 (안드로이드 슬롯)",
+          "cash_item_name": "별하늘 난초",
+          "cash_item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623fffb3e515847cddae5f3a13d972ba9095d41dc88bbb75d522e9e747696f20ba6bafc61234f2cd2b73c6748dd0bc8803d5",
+          "cash_item_description": "",
+          "cash_item_gender": "공용",
+          "cash_item_label": null,
+          "cash_item_coloring_prism": null
+        },
+        {
+          "cash_item_equipment_page_name": "한벌옷",
+          "cash_item_equipment_slot_name": "한벌옷 (안드로이드 슬롯)",
+          "cash_item_name": "난빛 항아 (여)",
+          "cash_item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623fce8d93734d138ebf80595ae332306d2906db46f65d8964ea4ab7f34a1d312dec091cc91eed9bb01cf154ddc2dea30221",
+          "cash_item_description": "",
+          "cash_item_gender": "여자",
+          "cash_item_label": null,
+          "cash_item_coloring_prism": null
+        },
+        {
+          "cash_item_equipment_page_name": "신발",
+          "cash_item_equipment_slot_name": "신발 (안드로이드 슬롯)",
+          "cash_item_name": "별하늘 꽃술",
+          "cash_item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623fb000c07c17b5011bb5f1789cbfa01f3d52e3a51a2ac5effe953841f83a72bdf013f63ef7d838aa4e81d23891492ea860",
+          "cash_item_description": "",
+          "cash_item_gender": "공용",
+          "cash_item_label": null,
+          "cash_item_coloring_prism": null
+        },
+        {
+          "cash_item_equipment_page_name": "망토",
+          "cash_item_equipment_slot_name": "망토 (안드로이드 슬롯)",
+          "cash_item_name": "사라사",
+          "cash_item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f2b51f3261d5216db72761ff9a5dab2e5ae0306e723ba89a2d770a92714a70fd7e94d0dd4129713fcfed52347c965a451",
+          "cash_item_description": "",
+          "cash_item_gender": "공용",
+          "cash_item_label": null,
+          "cash_item_coloring_prism": null
+        },
+        {
+          "cash_item_equipment_page_name": "장갑",
+          "cash_item_equipment_slot_name": "장갑 (안드로이드 슬롯)",
+          "cash_item_name": "웨딩드레스 장갑 (여)",
+          "cash_item_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f036a5e1e3dd8cd7739087edbe7fb1ac9b11a216c53a12064568a706131647c2d6f5ef6e72a389c2128b92bc87a2a44d2",
+          "cash_item_description": "",
+          "cash_item_gender": "여자",
+          "cash_item_label": null,
+          "cash_item_coloring_prism": null
+        }
+      ]
+    },
+    "heart_equipment": {
+      "heart_name": "골드 하트",
+      "heart_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/8f41f32ffc6184b526e8cc57d54442a8f898ba4a9b11b9a7b887b8d94223f52872df659935ef424ff7f1e8883d66062a",
+      "heart_description": "",
+      "item_additional_option_grade": "1",
+      "item_potential_option_grade": "1",
+      "item_additional_option": [
+        {
+          "option_no": 1,
+          "option_name": "최대 HP",
+          "option_value": "99"
+        },
+        {
+          "option_no": 2,
+          "option_name": null,
+          "option_value": null
+        }
+      ],
+      "item_potential_option": [
+        {
+          "option_no": 1,
+          "option_name": "물리 대미지",
+          "option_value": "0.78%"
+        },
+        {
+          "option_no": 2,
+          "option_name": "물리 대미지",
+          "option_value": "0.66%"
+        }
+      ]
+    }
+  },
+  "pet_equipment": {
+    "pet_1_name": "쁘띠 에릴",
+    "pet_1_pet_type": "LunaPetit",
+    "pet_1_date_expire": "2025-11-22T05:04:26.000Z",
+    "pet_1_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f6b347ac78e94e319019bf32cff070a566bf20ef68e1e6252564bf28fb83602e3705bc86fc6ca1d3da1027f50e05d709a",
+    "pet_2_name": "쁘띠 시아",
+    "pet_2_pet_type": "LunaPetit",
+    "pet_2_date_expire": "2025-11-22T05:04:28.000Z",
+    "pet_2_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f6b347ac78e94e319019bf32cff070a5645e70debd04e06071bd84be3b0ec21f1ede3e0d3701e53bfa6c966946c134576",
+    "pet_3_name": "쁘띠 아이엘",
+    "pet_3_pet_type": "LunaPetit",
+    "pet_3_date_expire": "2025-11-21T16:44:37.000Z",
+    "pet_3_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f6b347ac78e94e319019bf32cff070a56f759c7bbb9b8c125e490879294678618433ace30c300c1ba5f59eb1b6373b84b",
+    "pet_set_option": []
+  },
+  "skill_equipment": {
+    "character_class": "신궁",
+    "skill": {
+      "equipment_skill": [
+        {
+          "skill_mode": 1,
+          "equipment_skill_set": 1,
+          "slot_id": "1",
+          "skill_name": "Lv.10 애로우 블로우",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc920a02aea5dde71db8c82c2e21b25c9e97670c25f3e61fb33bb6dcc77f0a3561",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "30",
+          "skill_name": "Lv.10 피어싱",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc508cb2273c74357b75ac60a6ae1e874ba7a7c9d2c41cdfee7881bd89eda5b194",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "31",
+          "skill_name": "Lv.10 스나이핑",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc86bef97ac749e868aca7722247e88fc3d45f91ed4c6fa03c258ef7f0cff23063",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "32",
+          "skill_name": "Lv.30 리피팅 크로스보우 카트리지",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebcb59af9b68278f50afa7f42afc60dfa6f742cc39ff86024d4f4bf9b88143db968",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "33",
+          "skill_name": "Lv.1 롱레인지 트루샷",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc34d6bedf52d1d85da3d53e3210e1d44891e45caa5e6b8a4988d146e591a70ff6",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "34",
+          "skill_name": "Lv.10 애로우 일루젼",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc0e3619cec9e407ddf67ec9e4798afb932da7633ac067b6e874fb1e8c167a8013",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "35",
+          "skill_name": "Lv.30 트루 스나이핑",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/7def71bfa901d2e4e447c7c77f26295f0f487f8843a3bbd794ffa2e2d31d7855",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "37",
+          "skill_name": "Lv.22 이볼브",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/7b86954e612166baf330ec85e783f1729240cab508f403857aaeb518ee923beb",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "38",
+          "skill_name": "Lv.30 스파이더 인 미러",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/7251f840c40568c7e61a8c37afe18d8b28a3493f3179bd4a3d39ef47687a941e5a5ac0ba92556e696cf7a7b8a822258e",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "39",
+          "skill_name": "Lv.6 에르다 노바",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/7cdea65b4c91cb2ab673ec0969432a97e3edafe165d9ada3c990133c4cf7bbec",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "40",
+          "skill_name": "Lv.30 차지드 애로우",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/f8a93daaed5b03864ed8680d669fa859be7664cf0363b03b412a941ba689306b",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "41",
+          "skill_name": "Lv.24 가이디드 애로우",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/e56c55abf9f44753384e26d111d8416832743313d86a3d88d6ea2259549fe2f1",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "42",
+          "skill_name": "Lv.30 스플릿 애로우",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/7251f840c40568c7e61a8c37afe18d8b1f3de0546d21aaf49b05105d2869489c",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        },
+        {
+          "skill_mode": 2,
+          "equipment_skill_set": 1,
+          "slot_id": "43",
+          "skill_name": "Lv.5 불꽃여제",
+          "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/da22840d05b2d6dbea99716475fe0d1166d8f53c7d0e3270b9061ce633c55fb6b9543dd552c311d1d1c8c99f7da645a9",
+          "skill_type": null,
+          "skill_grade": null,
+          "add_feature_flag": null
+        }
+      ],
+      "preset": [],
+      "steal_skill": [],
+      "stella_memorize": []
+    }
+  },
+  "link_skill": {
+    "use_prest_no": 1,
+    "link_skill": [
+      {
+        "preset_no": 1,
+        "link_skill_info": [
+          {
+            "skill_name": "피버킬 어드밴티지",
+            "skill_level": 2,
+            "skill_description": "폴암의 정령 마하의 조력으로 피버 버프 충전율이 증가한다.",
+            "skill_effect": "피버 충전량 : 4%",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e4590e4ba6bef323277c0cf5da2547c630"
+          },
+          {
+            "skill_name": "어드벤쳐러 큐리어스",
+            "skill_level": 2,
+            "skill_description": "전투에 대한 끊임없는 호기심으로 치명타 확률과 치명타 피해를 증가시킨다.\r\n \r\n서로 다른 직업의 어드벤쳐러 큐리어스를 전수하는 경우 두 번째 스킬부터는 슬롯을 소모하지 않고 중복 장착되어 하나의 슬롯에 효과를 중첩시킬 수 있다.",
+            "skill_effect": "치명타 확률 : 2%, 치명타 피해 : 2%",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e4a1349fd277c37104789cbe395c9b0ebd"
+          },
+          {
+            "skill_name": "트리 오브 스타라이트",
+            "skill_level": 2,
+            "skill_description": "별꽃의 별들의 힘으로 최종 대미지를 증가시킨다.\r\n \r\n추가로 공격 시 별빛 나무의 힘을 폭발시켜 일정 시간 동안 최종 대미지를 추가로 증가시킨다. 재발동 대기 시간이 존재한다.\r\n \r\n서로 다른 직업의 트리 오브 스타라이트를 전수하는 경우 두 번째 스킬부터는 슬롯을 소모하지 않고 중복 장착되어 하나의 슬롯에 효과를 중첩시킬 수 있다.",
+            "skill_effect": "최종 대미지 : 2%, 버프 중 최종 대미지 : 10%, 버프 시간 : 10초, 재발동 대기 시간 : 60초",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/a83c40439968fbc326032467db932f9be749dfe3c3f19526a63be8e6fd1cd0b0836a52ea13fe72bbb726be2feb402530"
+          },
+          {
+            "skill_name": "빛의 수호",
+            "skill_level": 2,
+            "skill_description": "빛의 수호를 받아 물리 대미지를 증가시킨다.\r\n \r\n추가로 공격 시 일정 시간 동안 버프를 부여하여 모든 피해를 감소시킨다. 재발동 대기 시간이 존재한다.",
+            "skill_effect": "물리 대미지 : 2%, 버프 중 모든 피해 감소 : 10%, 버프 시간 : 10초, 재발동 대기 시간 : 60초",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc7e3eeaa6f8bf308e4c7fe78f15e8a1688f1036464f3f9f9783614382d1700f13"
+          },
+          {
+            "skill_name": "트리 오브 스타라이트",
+            "skill_level": 2,
+            "skill_description": "별꽃의 별들의 힘으로 최종 대미지를 증가시킨다.\r\n \r\n추가로 공격 시 별빛 나무의 힘을 폭발시켜 일정 시간 동안 최종 대미지를 추가로 증가시킨다. 재발동 대기 시간이 존재한다.\r\n \r\n서로 다른 직업의 트리 오브 스타라이트를 전수하는 경우 두 번째 스킬부터는 슬롯을 소모하지 않고 중복 장착되어 하나의 슬롯에 효과를 중첩시킬 수 있다.",
+            "skill_effect": "최종 대미지 : 2%, 버프 중 최종 대미지 : 10%, 버프 시간 : 10초, 재발동 대기 시간 : 60초",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/a83c40439968fbc326032467db932f9be749dfe3c3f19526a63be8e6fd1cd0b0836a52ea13fe72bbb726be2feb402530"
+          },
+          {
+            "skill_name": "엘프의 축복",
+            "skill_level": 2,
+            "skill_description": "고대 엘프의 기원으로 경험치 획득량을 증가시킨다.",
+            "skill_effect": "경험치 획득량 : 4%",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e4ad71ccb11e417283a28d8f6f5271e77d"
+          },
+          {
+            "skill_name": "임피리컬 널리지",
+            "skill_level": 2,
+            "skill_description": "실전 탐구로 습득된 마법사의 지식으로 마법 공격력과 파티 경험치를 증가시킨다.\r\n \r\n서로 다른 직업의 임피리컬 널리지를 전수하는 경우 두 번째 스킬부터는 슬롯을 소모하지 않고 중복 장착되어 하나의 슬롯에 효과를 중첩시킬 수 있다.",
+            "skill_effect": "마법 공격력 : 3%, 파티 경험치 획득량 : 2%",
+            "skill_effect_next": "",
+            "skill_icon": "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e440397cc64d5da44e95abffc79f040ef6"
+          }
+        ]
+      }
+    ]
+  },
+  "vmatrix": {
+    "character_class": "신궁",
+    "character_v_core_equipment": [
+      {
+        "slot_id": "1",
+        "slot_level": 5,
+        "vcore_name": "스플릿 애로우",
+        "vcore_level": 25,
+        "vcore_skill_name1": "스플릿 애로우",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "2",
+        "slot_level": 5,
+        "vcore_name": "리피팅 크로스보우 카트리지",
+        "vcore_level": 25,
+        "vcore_skill_name1": "리피팅 크로스보우 카트리지",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "3",
+        "slot_level": 5,
+        "vcore_name": "크리티컬 리인포스",
+        "vcore_level": 6,
+        "vcore_skill_name1": "크리티컬 리인포스",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "4",
+        "slot_level": 5,
+        "vcore_name": "메이플 월드 여신의 축복",
+        "vcore_level": 7,
+        "vcore_skill_name1": "메이플 월드 여신의 축복",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "5",
+        "slot_level": 5,
+        "vcore_name": "관통과 원격의 스나이핑/인핸스 스나이핑",
+        "vcore_level": 25,
+        "vcore_skill_name1": "스나이핑/인핸스 스나이핑",
+        "vcore_skill_name2": "피어싱/인핸스 피어싱",
+        "vcore_skill_name3": "롱레인지 트루샷/애로우 일루젼",
+        "vcore_type": "Enhancement"
+      },
+      {
+        "slot_id": "6",
+        "slot_level": 5,
+        "vcore_name": "저격과 최후의 피어싱/인핸스 피어싱",
+        "vcore_level": 25,
+        "vcore_skill_name1": "피어싱/인핸스 피어싱",
+        "vcore_skill_name2": "스나이핑/인핸스 스나이핑",
+        "vcore_skill_name3": "파이널 어택 : 석궁",
+        "vcore_type": "Enhancement"
+      },
+      {
+        "slot_id": "7",
+        "slot_level": 5,
+        "vcore_name": "최후와 냉동의 롱레인지 트루샷/애로우 일루젼",
+        "vcore_level": 25,
+        "vcore_skill_name1": "롱레인지 트루샷/애로우 일루젼",
+        "vcore_skill_name2": "파이널 어택 : 석궁",
+        "vcore_skill_name3": "볼트 스위프트/프리져",
+        "vcore_type": "Enhancement"
+      },
+      {
+        "slot_id": "8",
+        "slot_level": 5,
+        "vcore_name": "트루 스나이핑",
+        "vcore_level": 19,
+        "vcore_skill_name1": "트루 스나이핑",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "9",
+        "slot_level": 5,
+        "vcore_name": "가이디드 애로우",
+        "vcore_level": 19,
+        "vcore_skill_name1": "가이디드 애로우",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "10",
+        "slot_level": 5,
+        "vcore_name": "차지드 애로우",
+        "vcore_level": 25,
+        "vcore_skill_name1": "차지드 애로우",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "11",
+        "slot_level": 5,
+        "vcore_name": "이볼브",
+        "vcore_level": 7,
+        "vcore_skill_name1": "이볼브",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "12",
+        "slot_level": 5,
+        "vcore_name": "스파이더 인 미러",
+        "vcore_level": 25,
+        "vcore_skill_name1": "스파이더 인 미러",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "13",
+        "slot_level": 5,
+        "vcore_name": "에르다 노바",
+        "vcore_level": 1,
+        "vcore_skill_name1": "에르다 노바",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      },
+      {
+        "slot_id": "14",
+        "slot_level": 5,
+        "vcore_name": "쓸만한 홀리 심볼",
+        "vcore_level": 1,
+        "vcore_skill_name1": "쓸만한 홀리 심볼",
+        "vcore_skill_name2": "(Unknown)",
+        "vcore_skill_name3": "(Unknown)",
+        "vcore_type": "Skill"
+      }
+    ]
+  },
+  "hyper_stat": {
+    "preset_count": 2,
+    "use_preset_no": 1,
+    "use_preset_remain_hyper_stat": 15,
+    "hyper_stat": [
+      {
+        "preset_no": 1,
+        "hyper_stat_info": [
+          {
+            "stat_type": "최종 대미지",
+            "stat_level": 25,
+            "stat_increase": "최종 대미지 : 22.5%"
+          },
+          {
+            "stat_type": "경험치 획득량",
+            "stat_level": 21,
+            "stat_increase": "경험치 획득량 : 27.5%"
+          },
+          {
+            "stat_type": "파티 경험치 획득량",
+            "stat_level": 23,
+            "stat_increase": "파티 경험치 획득량 : 32.5%"
+          },
+          {
+            "stat_type": "공격 시 추가 스킬 피해",
+            "stat_level": 25,
+            "stat_increase": "타격 횟수 : 15, 스킬 대미지 : 225%, 재발동 대기 시간 : 1.5초"
+          }
+        ]
+      }
+    ]
+  },
+  "hexamatrix_skill": {
+    "character_class": "신궁",
+    "hexamatrix_skill": []
+  },
+  "hexamatrix_stat": {
+    "character_class": "신궁",
+    "hexamatrix_stat": []
+  },
+  "union": {
+    "union_level": 2198,
+    "union_grade": "노비스 유니온 IV",
+    "union_level_total_option": "경험치 획득량 5%, 물리 대미지 5%, 마법 대미지 5%, 치명타 확률 5%, 치명타 피해 5%, 보스 공격력 5%, 보스 방어력 5%, 파티 경험치 획득량 5%, 물리 피해 감소 5%, 마법 피해 감소 5%, 치명타 저항 5%, 치명타 피해 감소 5%"
+  },
+  "union_raider": {
+    "use_preset_no": 1,
+    "use_union_occupied_option": [
+      {
+        "option_name": "치명타 확률",
+        "option_value": "1.20%"
+      },
+      {
+        "option_name": "경험치 획득량",
+        "option_value": "6.00%"
+      },
+      {
+        "option_name": "물리 방어력",
+        "option_value": "12.00%"
+      },
+      {
+        "option_name": "마법 방어력",
+        "option_value": "6.00%"
+      },
+      {
+        "option_name": "보스 공격력",
+        "option_value": "2.00%"
+      },
+      {
+        "option_name": "보스 방어력",
+        "option_value": "15.60%"
+      }
+    ],
+    "use_union_raider_option": [
+      {
+        "option_name": "최대 HP",
+        "option_value": "19,200"
+      },
+      {
+        "option_name": "보스 공격력",
+        "option_value": "9.00%"
+      },
+      {
+        "option_name": "최종 대미지",
+        "option_value": "4.40%"
+      },
+      {
+        "option_name": "파티 경험치 획득량",
+        "option_value": "4.80%"
+      }
+    ],
+    "battle_map": [
+      {
+        "preset_no": 1,
+        "option_setting": {
+          "option_name_1": "치명타 저항 0.6%",
+          "option_name_2": "치명타 피해 감소 1.2%",
+          "option_name_3": "회피율 1.6%",
+          "option_name_4": "명중률 1.6%",
+          "option_name_5": "보스 방어력 1.2%",
+          "option_name_6": "물리 방어력 1.2%",
+          "option_name_7": "마법 방어력 1.2%",
+          "option_name_8": "치명타 확률 1.2%"
+        },
+        "union_raider": [
+          {
+            "block_rank": "3",
+            "block_type": "4",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 13,
+                "cell_y": 13
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 13,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 14,
+                "cell_y": 13
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 12,
+                "cell_y": 13
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 13,
+                "cell_y": 13
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "4",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 12,
+                "cell_y": 12
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 11,
+                "cell_y": 12
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 12,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 13,
+                "cell_y": 12
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 12,
+                "cell_y": 12
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 14,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 13,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 15,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 16,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 14,
+                "cell_y": 10
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 14,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 13,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 15,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 16,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 14,
+                "cell_y": 15
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "1",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 11,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 11,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 12,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 12,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 11,
+                "cell_y": 14
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "1",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 11,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 12,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 11,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 12,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 11,
+                "cell_y": 9
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 17,
+                "cell_y": 8
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 17,
+                "cell_y": 6
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 17,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 17,
+                "cell_y": 7
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 17,
+                "cell_y": 8
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "4",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 15,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 14,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 15,
+                "cell_y": 13
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 16,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 15,
+                "cell_y": 14
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "1",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 16,
+                "cell_y": 8
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 16,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 15,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 15,
+                "cell_y": 8
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 16,
+                "cell_y": 8
+              }
+            ]
+          },
+          {
+            "block_rank": "2",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 14,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 15,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 13,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "4",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 14,
+                "cell_y": 11
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "preset_no": 2,
+        "option_setting": {
+          "option_name_1": "치명타 저항 0.6%",
+          "option_name_2": "치명타 피해 감소 1.2%",
+          "option_name_3": "회피율 1.6%",
+          "option_name_4": "명중률 1.6%",
+          "option_name_5": "보스 방어력 1.2%",
+          "option_name_6": "물리 방어력 1.2%",
+          "option_name_7": "마법 방어력 1.2%",
+          "option_name_8": "치명타 확률 1.2%"
+        },
+        "union_raider": [
+          {
+            "block_rank": "3",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 10,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 11,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 12,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 13,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 11,
+                "cell_y": 10
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 13,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 14,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 15,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 16,
+                "cell_y": 11
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 14,
+                "cell_y": 11
+              }
+            ]
+          },
+          {
+            "block_rank": "3",
+            "block_type": "4",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 14,
+                "cell_y": 12
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 15,
+                "cell_y": 12
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 16,
+                "cell_y": 12
+              },
+              {
+                "cell_no": "4",
+                "cell_x": 15,
+                "cell_y": 13
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 15,
+                "cell_y": 12
+              }
+            ]
+          },
+          {
+            "block_rank": "2",
+            "block_type": "4",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 14,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 15,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 16,
+                "cell_y": 10
+              },
+              {
+                "cell_no": "4",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 15,
+                "cell_y": 10
+              }
+            ]
+          },
+          {
+            "block_rank": "2",
+            "block_type": "2",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 16,
+                "cell_y": 13
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 16,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 16,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "4",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 16,
+                "cell_y": 14
+              }
+            ]
+          },
+          {
+            "block_rank": "2",
+            "block_type": "1",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 14,
+                "cell_y": 14
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 14,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 15,
+                "cell_y": 15
+              },
+              {
+                "cell_no": "4",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 14,
+                "cell_y": 15
+              }
+            ]
+          },
+          {
+            "block_rank": "2",
+            "block_type": "1",
+            "block_position": [
+              {
+                "cell_no": "1",
+                "cell_x": 15,
+                "cell_y": 8
+              },
+              {
+                "cell_no": "2",
+                "cell_x": 15,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "3",
+                "cell_x": 16,
+                "cell_y": 9
+              },
+              {
+                "cell_no": "4",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "5",
+                "cell_x": null,
+                "cell_y": null
+              },
+              {
+                "cell_no": "position",
+                "cell_x": 15,
+                "cell_y": 9
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "guild": null,
+  "_assets": {
+    "icon_urls": [
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/2ce7c748cae28ec3d1c6a1c2e4e74d5c2200f8e3d3b07696612f023498d733f415fcf97328296051db22b9f78926e1d2b62947668959085cf7b340c56351c81e",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/2ce7c748cae28ec3d1c6a1c2e4e74d5c62038d9210ebd9cac4e45493b3eaff06dbccfef34588a9ce78e7bcf63a04d84e",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/2ce7c748cae28ec3d1c6a1c2e4e74d5c92c0d8a29b77bdd3b73583f12bf5dda08e1402b6a0a71c586e028a136936f76fc1f5ce1640d3c7cd2b520d76d8843929",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/52a682f02cc6ff7727fe2f9e4497a227142dde3e0d856c84fd826533070adbbb5d3507a93726eb7b8fb0abaf1f81400f4b9d3607c1785e36624a33265c907a3a",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/52a682f02cc6ff7727fe2f9e4497a2276d3b464249a2f50489b80f53070742f37ef31bce9af2c055d2fe156c0936eeee",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/5b4f10a7df753ae373bc91abaea1dfef2a48eb2e8103a94c7c93cc57bd309c747231ce7bee6c28fdb38755c54154e4c06fbf4d2d90a0b4e9fd71ab4fb59b3465",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc0e3619cec9e407ddf67ec9e4798afb932da7633ac067b6e874fb1e8c167a8013",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc34d6bedf52d1d85da3d53e3210e1d44891e45caa5e6b8a4988d146e591a70ff6",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc508cb2273c74357b75ac60a6ae1e874ba7a7c9d2c41cdfee7881bd89eda5b194",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc7e3eeaa6f8bf308e4c7fe78f15e8a1688f1036464f3f9f9783614382d1700f13",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc86bef97ac749e868aca7722247e88fc3d45f91ed4c6fa03c258ef7f0cff23063",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebc920a02aea5dde71db8c82c2e21b25c9e97670c25f3e61fb33bb6dcc77f0a3561",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/685126fa5360370646bb3e2a9faefebcb59af9b68278f50afa7f42afc60dfa6f742cc39ff86024d4f4bf9b88143db968",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f036a5e1e3dd8cd7739087edbe7fb1ac9b11a216c53a12064568a706131647c2d6f5ef6e72a389c2128b92bc87a2a44d2",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f289b9ac6b554a5163ec02e20429212ee099c8fa8129cf41746b37f3a2c48db91870b7dc956652c953076a16b498feda2be6365c0d953715d72f48e60a4eb2e3b",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f2b51f3261d5216db72761ff9a5dab2e5ae0306e723ba89a2d770a92714a70fd7e94d0dd4129713fcfed52347c965a451",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f4c974162cb4eb1b772000b8f7073cd8468b7733fe893600d5a5e076d258c9b4d032e7b09086ce42c592a04239954a21a",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f6b347ac78e94e319019bf32cff070a5645e70debd04e06071bd84be3b0ec21f1ede3e0d3701e53bfa6c966946c134576",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f6b347ac78e94e319019bf32cff070a566bf20ef68e1e6252564bf28fb83602e3705bc86fc6ca1d3da1027f50e05d709a",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f6b347ac78e94e319019bf32cff070a56f759c7bbb9b8c125e490879294678618433ace30c300c1ba5f59eb1b6373b84b",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f76baebb9b4ab34823344b1a12611305b0fa59891ba2a309f94a47050e1d29049c85db44d05ad1287095279f6ab3cb5c83471d0c35e74d8612f30189afbd6a1f6",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623f76baebb9b4ab34823344b1a12611305b3e2d8895c5151629ca1792edba862fd65c90112a25fa73ca532722d4d88a6f9b",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623fb000c07c17b5011bb5f1789cbfa01f3d52e3a51a2ac5effe953841f83a72bdf013f63ef7d838aa4e81d23891492ea860",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623fce8d93734d138ebf80595ae332306d2906db46f65d8964ea4ab7f34a1d312dec091cc91eed9bb01cf154ddc2dea30221",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6a88379971184c2c59f291809c3d623fffb3e515847cddae5f3a13d972ba9095d41dc88bbb75d522e9e747696f20ba6bafc61234f2cd2b73c6748dd0bc8803d5",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6aa21676cb871b5f3c12c9b6a9044d8b5eb4ceb5047fed616defcb68c57ba17860c1398000b98de9fdbd1f03f3046f409d5108e3feb50abf325ba186d7eb04da",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6aa21676cb871b5f3c12c9b6a9044d8be40f62958716dc204bd993f3a9e6b4df3d63869d601bae5b9fd3591134a42e2ae9b2f7220ddaa8bfb10f94e9fbfa4540f4a148ae60eb0ca88828a51d9bf415fa",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/6aa21676cb871b5f3c12c9b6a9044d8be59e70c031e892cf4273b1877268e540659e6853832987373b28c24d9931c5969d6d3b68ee3816a60fa17fe136e37323",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/7251f840c40568c7e61a8c37afe18d8b1f3de0546d21aaf49b05105d2869489c",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/7251f840c40568c7e61a8c37afe18d8b28a3493f3179bd4a3d39ef47687a941e5a5ac0ba92556e696cf7a7b8a822258e",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/7b86954e612166baf330ec85e783f1729240cab508f403857aaeb518ee923beb",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/7cdea65b4c91cb2ab673ec0969432a97e3edafe165d9ada3c990133c4cf7bbec",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/7def71bfa901d2e4e447c7c77f26295f0f487f8843a3bbd794ffa2e2d31d7855",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/7f47740288c5cf859b4954090c6033fba3a65af45262884d8e47f6435583ceb1276ec9da4b93b7581c1a0698f440263bd19682f419cee90b75304c2dc3e7ec30",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/8049f16acaafbe19c40e57490e1035e986895908b5ed1bf5609a2118ebc733909d7c6e12913df3099c4db8e9c7200790cd6687a8904fe793d6623949fe54dc5c",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/8049f16acaafbe19c40e57490e1035e9ab505f30ccfa793b60a916ec98ba947e73cb3ef7efaad2b4605ff64aa6de4f1f6450ecf4d8c74450fea14dcfceb84350",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/8b56f8d7fc752d6fa319e8001b98a2b5457adf40c8b735a864f6444546c3f2c32fc0e9b820260ab6c69cd367010f41fde021571b0c04c02af9f5a11a10c58ccb",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/8b56f8d7fc752d6fa319e8001b98a2b547b4de7d0c9dc8e77e6d26dbcae07938c20bf06646e225a7fb458bf5878adb06",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/8f41f32ffc6184b526e8cc57d54442a8a7bd134ecadb0a08f7665e3c851f5b50fb8ae5e850f7fca1c0f76b5e1d3b55ab",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/8f41f32ffc6184b526e8cc57d54442a8f898ba4a9b11b9a7b887b8d94223f52872df659935ef424ff7f1e8883d66062a",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e440397cc64d5da44e95abffc79f040ef6",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e4590e4ba6bef323277c0cf5da2547c630",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e4a1349fd277c37104789cbe395c9b0ebd",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/9289b0a9de3a03ff1bd7f5577466c5e4ad71ccb11e417283a28d8f6f5271e77d",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/9c2c9f28adce985e3d061966899c8cf21daff325bd2c39a1f4a87d15e57cc5ab533b1308cad8711791efcaf20213b515af98937541b1ef34a5e2ea9d7f6cedcfa33f2f83e2d26244b4e8eb29c1ff832d",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/a83c40439968fbc326032467db932f9be749dfe3c3f19526a63be8e6fd1cd0b0836a52ea13fe72bbb726be2feb402530",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945e56204d45ca62cc9c8fc58866c6e62d11",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b61213e8ef5dc4a2fb50db20aab44b945efb7c78997211e1a667ec6c6df63775ef",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/ab17639c2d37a79bf8a5edc8b9ab80b66621046626536d5e6f6f3edeff7246b1178a0765cb2ed6472e9b44bda1347100",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/b63eeda12d5ded05eb5af6926f76be522027a5553bf9a7cab7e4734c50d73252d7a495fd50a76f1c09747f34e19113dff78cb84e8bf0e90677d48a9981ad3f97",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/b63eeda12d5ded05eb5af6926f76be526794b116202b27d2c9b1030188032aef9c56ba0d09b799ef431bb5f8a0d022e568f5a2839ecf2d72efdbb9a1449116ec",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/b63eeda12d5ded05eb5af6926f76be526794b116202b27d2c9b1030188032aefac7cda72f7235259d52a979d12500c42c57bcedb663b5dd16c951fc498ce977b",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/da22840d05b2d6dbea99716475fe0d1166d8f53c7d0e3270b9061ce633c55fb6b9543dd552c311d1d1c8c99f7da645a9",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e56c55abf9f44753384e26d111d8416832743313d86a3d88d6ea2259549fe2f1",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995221d7713233826211614e64f072a3ea3e170d9f1dca2d4e7bed9a6b06be5898a",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a99574f145135d3715d0fe573eb280a1a7479f4bb864f5f8de8625c87c9bac4b4db3",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a99584b87aabe500063e5f4e1e355dc70ea7ce110f3e07ad45c5020314c119b4b9fc",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995ab2a9ce8066c9feab62de53f09bfbb4aa6824f5b63286b6aae767c973a8634de",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995bbe616d3465d49ee46e72cc0686b1f8b3980c0ea41a8aa6ed941741bd3c61550",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/e9cfe9634825de8780273619bdedfc8f28410b15a685ce9029630f163a46a995bce6d16cdf67e4086bc7d46b0b88c919b369b4f19a267f8c4047a94bda49722a",
+      "https://open.api.nexon.com/static/maplestorym/asset/icon/f8a93daaed5b03864ed8680d669fa859be7664cf0363b03b412a941ba689306b",
+      "https://open.api.nexon.com/static/maplestorym/character/code/d70b1526403999921e59bb70f479986ea26f68653391fd93378b75ae164ba415314e18394c8a4c37fdaf82b249cbc2f592a68033fe7606c2a3a85ed694b0f53cc82cb0fc448615f5f310ce5ed968635d20f0f26ad68ca1754c02890c5ff29679728ae06c3eda1fba809e961109d57fcc7d7675503ceeaeacb1496ecdd2af85e18100d255ece32fb53625db8d7e29c3bc4bfcb7a1c8e1c96d6f82799dba4cd3d96214566ef964e033fc5e661812581213?wmotion=W00"
+    ]
+  }
+}
