@@ -9,6 +9,7 @@ from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
+from starlette.responses import Response
 
 # ─────────────────────────────────────────────────────────────
 # 환경 변수 / API 설정
@@ -202,6 +203,10 @@ async def api_character(
     ocid = await resolve_ocid_maplem(q, world_name)
     return await fetch_all_sections(ocid, world_name)
 
+@app.get("/favicon.ico")
+async def favicon():
+    return Response(status_code=204)  # No Content
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="localhost", port=8000, reload=True)
